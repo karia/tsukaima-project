@@ -93,20 +93,20 @@ const generateStickerLayout = (stickerNames, seed = 20260305) => {
   const count = shuffled.length;
   const cols = 2;
   const rows = Math.ceil(count / cols);
-  const leftStart = 8;
-  const leftEnd = 92;
+  const evenRowLefts = [20, 70];
+  const oddRowLefts = [35, 85];
   const topStart = 20;
   const topEnd = 74;
-  const leftStep = cols > 1 ? (leftEnd - leftStart) / (cols - 1) : 0;
   const topStep = rows > 1 ? (topEnd - topStart) / (rows - 1) : 0;
 
   return shuffled.map((name, index) => {
     const row = Math.floor(index / cols);
     const col = index % cols;
+    const lefts = row % 2 === 0 ? evenRowLefts : oddRowLefts;
     return {
       name,
       top: Number((topStart + topStep * row).toFixed(3)),
-      left: Number((leftStart + leftStep * col).toFixed(3)),
+      left: Number(lefts[col].toFixed(3)),
       rotate: 0,
       scale: 1,
       opacity: 0.18,
