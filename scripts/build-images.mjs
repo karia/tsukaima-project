@@ -91,7 +91,7 @@ const shuffleWithSeed = (items, seed) => {
 const generateStickerLayout = (stickerNames, seed = 20260305) => {
   const shuffled = shuffleWithSeed(stickerNames, seed);
   const count = shuffled.length;
-  const cols = Math.ceil(Math.sqrt(count * 1.8));
+  const cols = 2;
   const rows = Math.ceil(count / cols);
   const leftStart = 8;
   const leftEnd = 92;
