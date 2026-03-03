@@ -170,14 +170,14 @@
   .school-emblem {
     align-items: center;
     background:
-      radial-gradient(circle at 30% 28%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0) 34%),
-      linear-gradient(180deg, #166534 0%, #065f46 100%);
-    border: 2px solid rgba(255, 255, 255, 0.86);
+      radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0) 34%),
+      linear-gradient(180deg, #1e3a8a 0%, #1e1b4b 100%);
+    border: 2px solid #f8f0c4;
     border-radius: 999px;
     box-shadow:
-      0 10px 20px rgba(6, 78, 59, 0.2),
-      0 0 0 4px rgba(16, 185, 129, 0.16);
-    color: #ecfdf5;
+      0 10px 20px rgba(30, 27, 75, 0.24),
+      0 0 0 4px rgba(250, 204, 21, 0.25);
+    color: #fef9c3;
     display: inline-flex;
     font-size: 0.85rem;
     font-weight: 800;
@@ -185,35 +185,37 @@
     justify-content: center;
     letter-spacing: 0.04em;
     position: relative;
-    text-shadow: 0 1px 0 rgba(6, 78, 59, 0.6);
+    text-shadow: 0 1px 0 rgba(30, 27, 75, 0.6);
     width: 3rem;
   }
 
   .school-emblem::before {
-    color: rgba(6, 95, 70, 0.95);
-    content: "✦";
-    font-size: 0.62rem;
+    color: #1e1b4b;
+    content: "◆";
+    font-size: 0.5rem;
     left: 50%;
     position: absolute;
-    top: -0.52rem;
+    top: -0.42rem;
     transform: translateX(-50%);
   }
 
   .school-emblem::after {
-    background: linear-gradient(180deg, #ecfdf5 0%, #d1fae5 100%);
-    border: 1px solid rgba(6, 78, 59, 0.28);
-    border-radius: 999px;
-    bottom: -0.8rem;
-    box-shadow: 0 6px 12px rgba(6, 78, 59, 0.14);
-    color: #065f46;
+    background: linear-gradient(180deg, #fefce8 0%, #fde68a 100%);
+    border: 1px solid rgba(146, 64, 14, 0.38);
+    bottom: -0.86rem;
+    box-shadow: 0 6px 12px rgba(30, 27, 75, 0.2);
+    clip-path: polygon(0 50%, 10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%);
+    color: #1e1b4b;
     content: attr(data-ribbon);
-    font-size: 0.48rem;
+    font-size: 0.47rem;
     font-weight: 800;
     left: 50%;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     line-height: 1;
-    padding: 0.21rem 0.5rem 0.19rem;
+    min-width: 4.3rem;
+    padding: 0.23rem 0.52rem 0.2rem;
     position: absolute;
+    text-align: center;
     transform: translateX(-50%);
     white-space: nowrap;
   }
