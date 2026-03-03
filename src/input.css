@@ -1,1 +1,105 @@
 @import "tailwindcss";
+
+:root {
+  --school-ink: #062f1f;
+  --school-ink-soft: #14532d;
+  --school-bg: #eff9f1;
+  --school-bg-sub: #d8efdd;
+  --school-surface: rgba(255, 255, 255, 0.84);
+  --school-surface-strong: rgba(255, 255, 255, 0.92);
+  --school-border: rgba(6, 95, 70, 0.2);
+  --school-border-strong: rgba(6, 78, 59, 0.35);
+  --school-shadow: 0 16px 40px rgba(16, 79, 42, 0.14);
+  --school-shadow-soft: 0 10px 25px rgba(16, 79, 42, 0.1);
+  --school-radius: 1.5rem;
+}
+
+@layer components {
+  .school-body {
+    color: var(--school-ink);
+    background:
+      radial-gradient(circle at 12% -5%, rgba(74, 222, 128, 0.28) 0%, rgba(74, 222, 128, 0) 36%),
+      radial-gradient(circle at 92% 6%, rgba(22, 163, 74, 0.2) 0%, rgba(22, 163, 74, 0) 30%),
+      linear-gradient(180deg, var(--school-bg) 0%, var(--school-bg-sub) 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  .school-body::before {
+    background-image: repeating-linear-gradient(
+      to bottom,
+      rgba(15, 118, 110, 0.08) 0,
+      rgba(15, 118, 110, 0.08) 1px,
+      transparent 1px,
+      transparent 40px
+    );
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: fixed;
+    z-index: -1;
+  }
+
+  .school-main {
+    margin-inline: auto;
+    max-width: 72rem;
+    padding: 2rem 1rem 4rem;
+  }
+
+  .school-title {
+    color: #064e3b;
+    letter-spacing: -0.02em;
+    text-align: center;
+  }
+
+  .school-nav {
+    backdrop-filter: blur(8px);
+    background: linear-gradient(180deg, var(--school-surface-strong) 0%, var(--school-surface) 100%);
+    border: 1px solid var(--school-border);
+    border-radius: 1rem;
+    box-shadow: var(--school-shadow-soft);
+  }
+
+  .school-nav-link {
+    background: linear-gradient(180deg, #f0fdf4 0%, #dcfce7 100%);
+    border: 1px solid rgba(6, 78, 59, 0.18);
+    border-radius: 0.75rem;
+    color: #064e3b;
+    font-weight: 700;
+    transition: transform 120ms ease, box-shadow 120ms ease, background-color 120ms ease;
+  }
+
+  .school-nav-link:hover {
+    background: linear-gradient(180deg, #dcfce7 0%, #bbf7d0 100%);
+    box-shadow: 0 8px 18px rgba(6, 78, 59, 0.14);
+    transform: translateY(-1px);
+  }
+
+  .school-card {
+    background: var(--school-surface);
+    border: 2px solid var(--school-border);
+    border-radius: var(--school-radius);
+    box-shadow: var(--school-shadow);
+    overflow: hidden;
+  }
+
+  .school-card-head {
+    background: linear-gradient(180deg, rgba(187, 247, 208, 0.75) 0%, rgba(220, 252, 231, 0.75) 100%);
+    border-bottom: 2px solid rgba(6, 95, 70, 0.14);
+    padding: 0.8rem 1.25rem;
+  }
+
+  .school-section-title {
+    color: #065f46;
+    font-weight: 800;
+  }
+
+  .school-note {
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid var(--school-border);
+    border-radius: var(--school-radius);
+    box-shadow: var(--school-shadow-soft);
+    text-align: center;
+  }
+}

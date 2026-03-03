@@ -17,10 +17,10 @@
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body
-    class="min-h-screen bg-[radial-gradient(circle_at_top,_#f2fbf3_0%,_#dbf3df_35%,_#d0ecd5_65%,_#c4e5cb_100%)] text-emerald-950"
+    class="school-body"
     style="font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', sans-serif"
   >
-    <main class="mx-auto grid w-full max-w-6xl gap-8 px-4 pb-16 pt-8 sm:px-6 lg:px-8">
+    <main class="school-main grid w-full gap-8 sm:px-6 lg:px-8">
       <section class="pb-2 sm:pb-4">
         <img
           src="./assets/img/key-visual.png"
@@ -28,20 +28,20 @@
           class="h-auto w-full rounded-3xl object-cover shadow-[0_18px_45px_rgba(16,79,42,0.2)]"
           decoding="async"
         />
-        <h1 class="mt-4 text-center text-3xl font-extrabold leading-tight tracking-tight text-emerald-900 sm:mt-5 sm:text-5xl" style="font-family: 'Zen Maru Gothic', sans-serif">
+        <h1 class="school-title mt-4 text-center text-3xl font-extrabold leading-tight tracking-tight sm:mt-5 sm:text-5xl" style="font-family: 'Zen Maru Gothic', sans-serif">
           ななし学園3年5組
         </h1>
       </section>
 
       <nav
         aria-label="ページ内メニュー"
-        class="sticky top-3 z-20 overflow-hidden rounded-2xl border border-emerald-900/10 bg-white/85 p-2 shadow-[0_12px_30px_rgba(16,79,42,0.12)] backdrop-blur"
+        class="school-nav sticky top-3 z-20 overflow-hidden p-2"
       >
         <ul class="grid grid-cols-2 gap-2 sm:grid-cols-4">
           <li>
             <a
               href="#message-board"
-              class="inline-flex w-full items-center justify-center rounded-xl bg-emerald-50 px-3 py-2 text-sm font-bold text-emerald-900 transition hover:bg-emerald-100 sm:text-base"
+              class="school-nav-link inline-flex w-full items-center justify-center px-3 py-2 text-sm sm:text-base"
             >
               寄せ書き
             </a>
@@ -49,7 +49,7 @@
           <li>
             <a
               href="#seat-map"
-              class="inline-flex w-full items-center justify-center rounded-xl bg-emerald-50 px-3 py-2 text-sm font-bold text-emerald-900 transition hover:bg-emerald-100 sm:text-base"
+              class="school-nav-link inline-flex w-full items-center justify-center px-3 py-2 text-sm sm:text-base"
             >
               座席表
             </a>
@@ -57,7 +57,7 @@
           <li>
             <a
               href="#profile-book"
-              class="inline-flex w-full items-center justify-center rounded-xl bg-emerald-50 px-3 py-2 text-sm font-bold text-emerald-900 transition hover:bg-emerald-100 sm:text-base"
+              class="school-nav-link inline-flex w-full items-center justify-center px-3 py-2 text-sm sm:text-base"
             >
               プロフィール帳
             </a>
@@ -65,7 +65,7 @@
           <li>
             <a
               href="#links"
-              class="inline-flex w-full items-center justify-center rounded-xl bg-emerald-50 px-3 py-2 text-sm font-bold text-emerald-900 transition hover:bg-emerald-100 sm:text-base"
+              class="school-nav-link inline-flex w-full items-center justify-center px-3 py-2 text-sm sm:text-base"
             >
               リンク
             </a>
@@ -73,16 +73,16 @@
         </ul>
       </nav>
 
-      <section class="rounded-3xl border border-emerald-900/10 bg-white/70 p-4 text-center shadow-[0_10px_25px_rgba(16,79,42,0.1)] sm:p-6">
+      <section class="school-note p-4 sm:p-6">
         <p class="mx-auto max-w-3xl text-base font-medium text-emerald-900/85 sm:text-lg">
           学園風コンセプトでお届けする、誕生日祝いの特設ページです。
           クラスの思い出をめぐるように、キービジュアル、寄せ書き、座席表、プロフィール帳をご覧ください。
         </p>
       </section>
 
-      <section id="message-board" class="overflow-hidden rounded-3xl border-2 border-emerald-800/20 bg-white/85 shadow-[0_16px_40px_rgba(16,79,42,0.15)]">
-        <div class="border-b-2 border-emerald-800/10 bg-emerald-100/70 px-5 py-3 sm:px-7 sm:py-4">
-          <h2 class="text-2xl font-extrabold text-emerald-900" style="font-family: 'Zen Maru Gothic', sans-serif">寄せ書きの紹介</h2>
+      <section id="message-board" class="school-card">
+        <div class="school-card-head px-5 py-3 sm:px-7 sm:py-4">
+          <h2 class="school-section-title text-2xl" style="font-family: 'Zen Maru Gothic', sans-serif">寄せ書きの紹介</h2>
         </div>
         <div class="space-y-4 p-4 sm:p-6">
           <p class="text-sm font-bold tracking-wide text-emerald-800/90 sm:text-base">
@@ -99,9 +99,9 @@
         </div>
       </section>
 
-      <section id="seat-map" class="overflow-hidden rounded-3xl border-2 border-emerald-800/20 bg-white/85 shadow-[0_16px_40px_rgba(16,79,42,0.15)]">
-        <div class="border-b-2 border-emerald-800/10 bg-emerald-100/70 px-5 py-3 sm:px-7 sm:py-4">
-          <h2 class="text-2xl font-extrabold text-emerald-900" style="font-family: 'Zen Maru Gothic', sans-serif">クラスの座席表</h2>
+      <section id="seat-map" class="school-card">
+        <div class="school-card-head px-5 py-3 sm:px-7 sm:py-4">
+          <h2 class="school-section-title text-2xl" style="font-family: 'Zen Maru Gothic', sans-serif">クラスの座席表</h2>
         </div>
         <div class="space-y-4 p-4 sm:p-6">
           <p class="text-sm font-bold tracking-wide text-emerald-800/90 sm:text-base">
@@ -120,9 +120,9 @@
         </div>
       </section>
 
-      <section id="profile-book" class="overflow-hidden rounded-3xl border-2 border-emerald-800/20 bg-white/85 shadow-[0_16px_40px_rgba(16,79,42,0.15)]">
-        <div class="border-b-2 border-emerald-800/10 bg-emerald-100/70 px-5 py-3 sm:px-7 sm:py-4">
-          <h2 class="text-2xl font-extrabold text-emerald-900" style="font-family: 'Zen Maru Gothic', sans-serif">プロフィール帳</h2>
+      <section id="profile-book" class="school-card">
+        <div class="school-card-head px-5 py-3 sm:px-7 sm:py-4">
+          <h2 class="school-section-title text-2xl" style="font-family: 'Zen Maru Gothic', sans-serif">プロフィール帳</h2>
         </div>
         <div class="space-y-4 p-4 sm:p-6">
           <p class="text-sm font-bold tracking-wide text-emerald-800/90 sm:text-base">
@@ -183,9 +183,9 @@
         </div>
       </section>
 
-      <section id="links" class="overflow-hidden rounded-3xl border-2 border-emerald-800/20 bg-white/85 shadow-[0_16px_40px_rgba(16,79,42,0.15)]">
-        <div class="border-b-2 border-emerald-800/10 bg-emerald-100/70 px-5 py-3 sm:px-7 sm:py-4">
-          <h2 class="text-2xl font-extrabold text-emerald-900" style="font-family: 'Zen Maru Gothic', sans-serif">関連リンク</h2>
+      <section id="links" class="school-card">
+        <div class="school-card-head px-5 py-3 sm:px-7 sm:py-4">
+          <h2 class="school-section-title text-2xl" style="font-family: 'Zen Maru Gothic', sans-serif">関連リンク</h2>
         </div>
         <div class="grid gap-3 p-4 sm:p-6">
           <a
@@ -211,8 +211,8 @@
     </main>
 
     <footer class="mx-auto w-full max-w-6xl px-4 pb-10 sm:px-6 lg:px-8">
-      <section class="rounded-3xl border-2 border-emerald-800/20 bg-white/85 p-5 shadow-[0_16px_40px_rgba(16,79,42,0.15)] sm:p-7">
-        <h2 class="text-xl font-extrabold text-emerald-900 sm:text-2xl" style="font-family: 'Zen Maru Gothic', sans-serif">使い魔プロジェクト2026</h2>
+      <section class="school-card p-5 sm:p-7">
+        <h2 class="school-section-title text-xl sm:text-2xl" style="font-family: 'Zen Maru Gothic', sans-serif">使い魔プロジェクト2026</h2>
         <p class="mt-4 text-sm font-bold leading-relaxed text-emerald-900/90 sm:text-base">
           ハッピーバースデー堰代ミコ！<br />
           ここは堰代ミコのファン（使い魔）有志による企画Webサイトです。<br />
