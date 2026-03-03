@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ja">
+<html lang="ja" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -45,7 +45,39 @@
         />
       </section>
 
-      <section class="overflow-hidden rounded-3xl border-2 border-emerald-800/20 bg-white/85 shadow-[0_16px_40px_rgba(16,79,42,0.15)]">
+      <nav
+        aria-label="ページ内メニュー"
+        class="sticky top-3 z-20 overflow-hidden rounded-2xl border border-emerald-900/10 bg-white/85 p-2 shadow-[0_12px_30px_rgba(16,79,42,0.12)] backdrop-blur"
+      >
+        <ul class="grid grid-cols-3 gap-2">
+          <li>
+            <a
+              href="#message-board"
+              class="inline-flex w-full items-center justify-center rounded-xl bg-emerald-50 px-3 py-2 text-sm font-bold text-emerald-900 transition hover:bg-emerald-100 sm:text-base"
+            >
+              寄せ書き
+            </a>
+          </li>
+          <li>
+            <a
+              href="#seat-map"
+              class="inline-flex w-full items-center justify-center rounded-xl bg-emerald-50 px-3 py-2 text-sm font-bold text-emerald-900 transition hover:bg-emerald-100 sm:text-base"
+            >
+              座席表
+            </a>
+          </li>
+          <li>
+            <a
+              href="#links"
+              class="inline-flex w-full items-center justify-center rounded-xl bg-emerald-50 px-3 py-2 text-sm font-bold text-emerald-900 transition hover:bg-emerald-100 sm:text-base"
+            >
+              リンク
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <section id="message-board" class="overflow-hidden rounded-3xl border-2 border-emerald-800/20 bg-white/85 shadow-[0_16px_40px_rgba(16,79,42,0.15)]">
         <div class="border-b-2 border-emerald-800/10 bg-emerald-100/70 px-5 py-3 sm:px-7 sm:py-4">
           <h2 class="text-2xl font-extrabold text-emerald-900" style="font-family: 'Zen Maru Gothic', sans-serif">寄せ書きの紹介</h2>
         </div>
@@ -64,7 +96,7 @@
         </div>
       </section>
 
-      <section class="overflow-hidden rounded-3xl border-2 border-emerald-800/20 bg-white/85 shadow-[0_16px_40px_rgba(16,79,42,0.15)]">
+      <section id="seat-map" class="overflow-hidden rounded-3xl border-2 border-emerald-800/20 bg-white/85 shadow-[0_16px_40px_rgba(16,79,42,0.15)]">
         <div class="border-b-2 border-emerald-800/10 bg-emerald-100/70 px-5 py-3 sm:px-7 sm:py-4">
           <h2 class="text-2xl font-extrabold text-emerald-900" style="font-family: 'Zen Maru Gothic', sans-serif">クラスの座席表</h2>
         </div>
@@ -85,7 +117,7 @@
         </div>
       </section>
 
-      <section class="overflow-hidden rounded-3xl border-2 border-emerald-800/20 bg-white/85 shadow-[0_16px_40px_rgba(16,79,42,0.15)]">
+      <section id="links" class="overflow-hidden rounded-3xl border-2 border-emerald-800/20 bg-white/85 shadow-[0_16px_40px_rgba(16,79,42,0.15)]">
         <div class="border-b-2 border-emerald-800/10 bg-emerald-100/70 px-5 py-3 sm:px-7 sm:py-4">
           <h2 class="text-2xl font-extrabold text-emerald-900" style="font-family: 'Zen Maru Gothic', sans-serif">関連リンク</h2>
         </div>
