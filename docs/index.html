@@ -97,13 +97,23 @@
             クラスのみんなから集まったメッセージを、1枚の寄せ書きにまとめました。
             たくさんの「おめでとう」の気持ちをぜひ受け取ってください。
           </p>
-          <img
-            src="./assets/img/message-board.png"
-            alt="堰代ミコさんへの誕生日寄せ書き"
-            class="h-auto w-full rounded-2xl border border-emerald-900/10 object-cover"
-            loading="lazy"
-            decoding="async"
-          />
+          <button
+            type="button"
+            class="expand-trigger block w-full overflow-hidden rounded-2xl border border-emerald-900/10"
+            data-expandable-image
+            data-image-src="./assets/img/message-board.png"
+            data-image-alt="堰代ミコさんへの誕生日寄せ書き"
+            aria-label="寄せ書きを拡大表示"
+          >
+            <img
+              src="./assets/img/message-board.png"
+              alt="堰代ミコさんへの誕生日寄せ書き"
+              class="h-auto w-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </button>
+          <p class="text-right text-xs font-bold tracking-wide text-emerald-700/80">クリックで拡大</p>
         </div>
       </section>
 
@@ -114,17 +124,24 @@
         <div class="space-y-4 p-4 sm:p-6">
           <p class="text-sm font-bold tracking-wide text-emerald-800/90 sm:text-base">
             学園企画の世界観に合わせて作成した、3年5組のクラス座席表です。
-            スマホでは横にスクロールして全体を確認できます。
           </p>
-          <div class="overflow-x-auto rounded-2xl border border-emerald-900/10 bg-emerald-50/50 p-2">
+          <button
+            type="button"
+            class="expand-trigger block w-full overflow-hidden rounded-2xl border border-emerald-900/10 bg-emerald-50/50 p-2"
+            data-expandable-image
+            data-image-src="./assets/img/seat-map.png"
+            data-image-alt="ななし学園3年5組のクラス座席表"
+            aria-label="座席表を拡大表示"
+          >
             <img
               src="./assets/img/seat-map.png"
               alt="ななし学園3年5組のクラス座席表"
-              class="h-auto min-w-[760px] rounded-xl md:min-w-0 md:w-full"
+              class="h-auto w-full rounded-xl"
               loading="lazy"
               decoding="async"
             />
-          </div>
+          </button>
+          <p class="text-right text-xs font-bold tracking-wide text-emerald-700/80">クリックで拡大</p>
         </div>
       </section>
 
@@ -218,6 +235,14 @@
       </section>
       </main>
 
+      <div id="image-modal" class="image-modal hidden" aria-hidden="true">
+        <div class="image-modal-backdrop" data-modal-close></div>
+        <div class="image-modal-content" role="dialog" aria-modal="true" aria-label="画像拡大表示">
+          <button type="button" class="image-modal-close" data-modal-close aria-label="閉じる">×</button>
+          <img id="image-modal-img" src="" alt="" class="image-modal-img" />
+        </div>
+      </div>
+
       <footer class="mx-auto w-full max-w-6xl px-4 pb-10 sm:px-6 lg:px-8">
         <section class="school-card p-5 sm:p-7">
           <h2 class="school-section-title text-xl sm:text-2xl" style="font-family: 'Kaisei Decol', serif">使い魔プロジェクト2026</h2>
@@ -249,6 +274,47 @@
           { once: true }
         );
         setTimeout(reveal, 4000);
+      })();
+
+      (() => {
+        const body = document.body;
+        const modal = document.getElementById("image-modal");
+        const modalImg = document.getElementById("image-modal-img");
+        const triggers = document.querySelectorAll("[data-expandable-image]");
+        const closeTargets = document.querySelectorAll("[data-modal-close]");
+
+        if (!modal || !modalImg || triggers.length === 0) return;
+
+        const closeModal = () => {
+          modal.classList.add("hidden");
+          modal.setAttribute("aria-hidden", "true");
+          body.classList.remove("modal-open");
+          modalImg.src = "";
+          modalImg.alt = "";
+        };
+
+        triggers.forEach((trigger) => {
+          trigger.addEventListener("click", () => {
+            const src = trigger.getAttribute("data-image-src");
+            const alt = trigger.getAttribute("data-image-alt") || "";
+            if (!src) return;
+            modalImg.src = src;
+            modalImg.alt = alt;
+            modal.classList.remove("hidden");
+            modal.setAttribute("aria-hidden", "false");
+            body.classList.add("modal-open");
+          });
+        });
+
+        closeTargets.forEach((target) => {
+          target.addEventListener("click", closeModal);
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && !modal.classList.contains("hidden")) {
+            closeModal();
+          }
+        });
       })();
     </script>
   </body>
