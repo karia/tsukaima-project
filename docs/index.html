@@ -6,78 +6,74 @@
     <title>ななし学園3年5組 | 堰代ミコ 非公式誕生日企画</title>
     <meta
       name="description"
-      content="堰代ミコさんの非公式誕生日企画『ななし学園3年5組』の特設ページ。キービジュアル、寄せ書き紹介、クラスの座席表を掲載。"
+      content="堰代ミコの非公式誕生日企画『ななし学園3年5組』の特設ページ。キービジュアル、寄せ書き紹介、クラスの座席表を掲載。"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Zen+Maru+Gothic:wght@500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;500;700&family=Mochiy+Pop+One&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Old+Mincho:wght@700;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body
-    class="min-h-screen bg-[radial-gradient(circle_at_top,_#f2fbf3_0%,_#dbf3df_35%,_#d0ecd5_65%,_#c4e5cb_100%)] text-emerald-950"
+    class="school-body is-loading"
     style="font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', sans-serif"
   >
-    <div class="absolute inset-x-0 top-0 -z-10 h-64 bg-gradient-to-b from-emerald-300/45 to-transparent"></div>
+    <div id="page-loader" class="page-loader" role="status" aria-live="polite">
+      <p class="page-loader-text">Nanashi Gakuen 2026.03.05</p>
+    </div>
 
-    <header class="mx-auto w-full max-w-6xl px-4 pb-6 pt-8 sm:px-6 lg:px-8">
-      <p class="inline-flex rounded-full border border-emerald-700/35 bg-white/80 px-4 py-1 text-sm font-bold tracking-wide text-emerald-800">
-        堰代ミコ 非公式誕生日企画
-      </p>
-      <h1 class="mt-4 text-4xl font-extrabold leading-tight tracking-tight text-emerald-900 sm:text-5xl lg:text-6xl" style="font-family: 'Zen Maru Gothic', sans-serif">
-        ななし学園3年5組
-      </h1>
-      <p class="mt-4 max-w-2xl text-base font-medium text-emerald-900/85 sm:text-lg">
-        学園風コンセプトでお届けする、誕生日祝いの特設ページです。
-        クラスの思い出をめぐるように、キービジュアル、寄せ書き、座席表をご覧ください。
-      </p>
-    </header>
-
-    <main class="mx-auto grid w-full max-w-6xl gap-8 px-4 pb-16 sm:px-6 lg:px-8">
-      <section class="pb-2 sm:pb-4">
+    <div class="page-shell">
+      <main class="school-main grid w-full gap-8 sm:px-6 lg:px-8">
+      <section class="hero-stage pb-2 sm:pb-4">
         <img
           src="./assets/img/key-visual.png"
           alt="ななし学園3年5組 キービジュアル"
-          class="h-auto w-full rounded-3xl object-cover shadow-[0_18px_45px_rgba(16,79,42,0.2)]"
+          class="hero-image h-auto w-full rounded-3xl object-cover shadow-[0_18px_45px_rgba(16,79,42,0.2)]"
           decoding="async"
         />
+        <h1 class="school-title mt-4 text-center text-3xl font-medium leading-tight tracking-tight sm:mt-5 sm:text-5xl" style="font-family: 'Mochiy Pop One', sans-serif">
+          ななし学園3年5組
+        </h1>
+        <p class="hero-subtitle mt-3 text-center text-sm font-bold tracking-[0.18em] text-emerald-800 sm:text-base">
+          SPECIAL BIRTHDAY CLASS PAGE
+        </p>
       </section>
 
       <nav
         aria-label="ページ内メニュー"
-        class="sticky top-3 z-20 overflow-hidden rounded-2xl border border-emerald-900/10 bg-white/85 p-2 shadow-[0_12px_30px_rgba(16,79,42,0.12)] backdrop-blur"
+        class="school-nav sticky top-3 z-20 overflow-hidden p-2"
       >
         <ul class="grid grid-cols-2 gap-2 sm:grid-cols-4">
           <li>
             <a
-              href="#message-board"
-              class="inline-flex w-full items-center justify-center rounded-xl bg-emerald-50 px-3 py-2 text-sm font-bold text-emerald-900 transition hover:bg-emerald-100 sm:text-base"
-            >
-              寄せ書き
-            </a>
-          </li>
-          <li>
-            <a
-              href="#seat-map"
-              class="inline-flex w-full items-center justify-center rounded-xl bg-emerald-50 px-3 py-2 text-sm font-bold text-emerald-900 transition hover:bg-emerald-100 sm:text-base"
-            >
-              座席表
-            </a>
-          </li>
-          <li>
-            <a
               href="#profile-book"
-              class="inline-flex w-full items-center justify-center rounded-xl bg-emerald-50 px-3 py-2 text-sm font-bold text-emerald-900 transition hover:bg-emerald-100 sm:text-base"
+              class="school-nav-link inline-flex w-full items-center justify-center px-3 py-2 text-sm sm:text-base"
             >
               プロフィール帳
             </a>
           </li>
           <li>
             <a
+              href="#seat-map"
+              class="school-nav-link inline-flex w-full items-center justify-center px-3 py-2 text-sm sm:text-base"
+            >
+              座席表
+            </a>
+          </li>
+          <li>
+            <a
+              href="#message-board"
+              class="school-nav-link inline-flex w-full items-center justify-center px-3 py-2 text-sm sm:text-base"
+            >
+              寄せ書き
+            </a>
+          </li>
+          <li>
+            <a
               href="#links"
-              class="inline-flex w-full items-center justify-center rounded-xl bg-emerald-50 px-3 py-2 text-sm font-bold text-emerald-900 transition hover:bg-emerald-100 sm:text-base"
+              class="school-nav-link inline-flex w-full items-center justify-center px-3 py-2 text-sm sm:text-base"
             >
               リンク
             </a>
@@ -85,53 +81,19 @@
         </ul>
       </nav>
 
-      <section id="message-board" class="overflow-hidden rounded-3xl border-2 border-emerald-800/20 bg-white/85 shadow-[0_16px_40px_rgba(16,79,42,0.15)]">
-        <div class="border-b-2 border-emerald-800/10 bg-emerald-100/70 px-5 py-3 sm:px-7 sm:py-4">
-          <h2 class="text-2xl font-extrabold text-emerald-900" style="font-family: 'Zen Maru Gothic', sans-serif">寄せ書きの紹介</h2>
-        </div>
-        <div class="space-y-4 p-4 sm:p-6">
-          <p class="text-sm font-bold tracking-wide text-emerald-800/90 sm:text-base">
-            クラスのみんなから集まったメッセージを、1枚の寄せ書きにまとめました。
-            たくさんの「おめでとう」の気持ちをぜひ受け取ってください。
-          </p>
-          <img
-            src="./assets/img/message-board.png"
-            alt="堰代ミコさんへの誕生日寄せ書き"
-            class="h-auto w-full rounded-2xl border border-emerald-900/10 object-cover"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
+      <section class="school-note p-4 sm:p-6">
+        <p class="mx-auto max-w-3xl text-base font-medium text-emerald-900/85 sm:text-lg">
+          使い魔と堰代ミコは「ななし学園3年5組」のクラスメイト。<br />ミコちゃんからプロフィール帳を渡されたあなたは何を書く？
+        </p>
       </section>
 
-      <section id="seat-map" class="overflow-hidden rounded-3xl border-2 border-emerald-800/20 bg-white/85 shadow-[0_16px_40px_rgba(16,79,42,0.15)]">
-        <div class="border-b-2 border-emerald-800/10 bg-emerald-100/70 px-5 py-3 sm:px-7 sm:py-4">
-          <h2 class="text-2xl font-extrabold text-emerald-900" style="font-family: 'Zen Maru Gothic', sans-serif">クラスの座席表</h2>
+      <section id="profile-book" class="school-card card-profile">
+        <div class="school-card-head px-5 py-3 sm:px-7 sm:py-4">
+          <h2 class="school-section-title text-2xl">プロフィール帳</h2>
         </div>
         <div class="space-y-4 p-4 sm:p-6">
           <p class="text-sm font-bold tracking-wide text-emerald-800/90 sm:text-base">
-            学園企画の世界観に合わせて作成した、3年5組のクラス座席表です。
-            スマホでは横にスクロールして全体を確認できます。
-          </p>
-          <div class="overflow-x-auto rounded-2xl border border-emerald-900/10 bg-emerald-50/50 p-2">
-            <img
-              src="./assets/img/seat-map.png"
-              alt="ななし学園3年5組のクラス座席表"
-              class="h-auto min-w-[760px] rounded-xl md:min-w-0 md:w-full"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section id="profile-book" class="overflow-hidden rounded-3xl border-2 border-emerald-800/20 bg-white/85 shadow-[0_16px_40px_rgba(16,79,42,0.15)]">
-        <div class="border-b-2 border-emerald-800/10 bg-emerald-100/70 px-5 py-3 sm:px-7 sm:py-4">
-          <h2 class="text-2xl font-extrabold text-emerald-900" style="font-family: 'Zen Maru Gothic', sans-serif">プロフィール帳</h2>
-        </div>
-        <div class="space-y-4 p-4 sm:p-6">
-          <p class="text-sm font-bold tracking-wide text-emerald-800/90 sm:text-base">
-            プロフィール帳を用意したので皆さん自由に書き込んでくださいね。
+            プロフィール帳はこちら！皆さん自由に書き込んでくださいね。
           </p>
           <p class="text-sm font-bold tracking-wide text-emerald-800/90 sm:text-base">
             書いたものは
@@ -146,27 +108,108 @@
             のハッシュタグで共有してください。
           </p>
           <div class="grid gap-4 md:grid-cols-2">
-            <img
-              src="./assets/img/profile-mico.png"
-              alt="堰代ミコさん向けプロフィール帳"
-              class="h-auto w-full rounded-2xl border border-emerald-900/10 object-cover"
-              loading="lazy"
-              decoding="async"
-            />
-            <img
-              src="./assets/img/profile-tsukaima.png"
-              alt="使い魔向けプロフィール帳"
-              class="h-auto w-full rounded-2xl border border-emerald-900/10 object-cover"
-              loading="lazy"
-              decoding="async"
-            />
+            <figure class="space-y-2">
+              <figcaption class="flex items-center justify-center gap-3 text-base font-extrabold text-emerald-800 sm:text-lg">
+                <span>堰代ミコ用</span>
+                <a
+                  href="./assets/img/profile-mico.png"
+                  download
+                  class="text-sm font-bold underline decoration-2 underline-offset-2 transition hover:text-emerald-600 sm:text-base"
+                >
+                  ダウンロード
+                </a>
+              </figcaption>
+              <img
+                src="./assets/img/profile-mico.png"
+                alt="堰代ミコさん向けプロフィール帳"
+                class="h-auto w-full rounded-2xl border border-emerald-900/10 object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+            <figure class="space-y-2">
+              <figcaption class="flex items-center justify-center gap-3 text-base font-extrabold text-emerald-800 sm:text-lg">
+                <span>使い魔用</span>
+                <a
+                  href="./assets/img/profile-tsukaima.png"
+                  download
+                  class="text-sm font-bold underline decoration-2 underline-offset-2 transition hover:text-emerald-600 sm:text-base"
+                >
+                  ダウンロード
+                </a>
+              </figcaption>
+              <img
+                src="./assets/img/profile-tsukaima.png"
+                alt="使い魔向けプロフィール帳"
+                class="h-auto w-full rounded-2xl border border-emerald-900/10 object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
           </div>
         </div>
       </section>
 
-      <section id="links" class="overflow-hidden rounded-3xl border-2 border-emerald-800/20 bg-white/85 shadow-[0_16px_40px_rgba(16,79,42,0.15)]">
-        <div class="border-b-2 border-emerald-800/10 bg-emerald-100/70 px-5 py-3 sm:px-7 sm:py-4">
-          <h2 class="text-2xl font-extrabold text-emerald-900" style="font-family: 'Zen Maru Gothic', sans-serif">関連リンク</h2>
+      <section id="seat-map" class="school-card card-seat">
+        <div class="school-card-head px-5 py-3 sm:px-7 sm:py-4">
+          <h2 class="school-section-title text-2xl">クラスの座席表</h2>
+        </div>
+        <div class="space-y-4 p-4 sm:p-6">
+          <p class="text-sm font-bold tracking-wide text-emerald-800/90 sm:text-base">
+            学園企画の世界観に合わせて作成した、3年5組のクラス座席表です。
+          </p>
+          <button
+            type="button"
+            class="expand-trigger block w-full overflow-hidden rounded-2xl border border-emerald-900/10 bg-emerald-50/50 p-2"
+            data-expandable-image
+            data-image-src="./assets/img/seat-map.png"
+            data-image-alt="ななし学園3年5組のクラス座席表"
+            aria-label="座席表を拡大表示"
+          >
+            <img
+              src="./assets/img/seat-map.png"
+              alt="ななし学園3年5組のクラス座席表"
+              class="h-auto w-full rounded-xl"
+              loading="lazy"
+              decoding="async"
+            />
+          </button>
+          <p class="text-right text-xs font-bold tracking-wide text-emerald-700/80">クリックで拡大</p>
+        </div>
+      </section>
+
+      <section id="message-board" class="school-card card-board">
+        <div class="school-card-head px-5 py-3 sm:px-7 sm:py-4">
+          <h2 class="school-section-title text-2xl">寄せ書きの紹介</h2>
+        </div>
+        <div class="space-y-4 p-4 sm:p-6">
+          <p class="text-sm font-bold tracking-wide text-emerald-800/90 sm:text-base">
+            クラスのみんなから集まったメッセージを、1枚の寄せ書きにまとめました。
+            たくさんの「おめでとう」の気持ちをぜひ受け取ってください。
+          </p>
+          <button
+            type="button"
+            class="expand-trigger block w-full overflow-hidden rounded-2xl border border-emerald-900/10"
+            data-expandable-image
+            data-image-src="./assets/img/message-board.png"
+            data-image-alt="堰代ミコさんへの誕生日寄せ書き"
+            aria-label="寄せ書きを拡大表示"
+          >
+            <img
+              src="./assets/img/message-board.png"
+              alt="堰代ミコさんへの誕生日寄せ書き"
+              class="h-auto w-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </button>
+          <p class="text-right text-xs font-bold tracking-wide text-emerald-700/80">クリックで拡大</p>
+        </div>
+      </section>
+
+      <section id="links" class="school-card card-links">
+        <div class="school-card-head px-5 py-3 sm:px-7 sm:py-4">
+          <h2 class="school-section-title text-2xl">関連リンク</h2>
         </div>
         <div class="grid gap-3 p-4 sm:p-6">
           <a
@@ -189,6 +232,90 @@
           </a>
         </div>
       </section>
-    </main>
+      </main>
+
+      <div id="image-modal" class="image-modal hidden" aria-hidden="true">
+        <div class="image-modal-backdrop" data-modal-close></div>
+        <div class="image-modal-content" role="dialog" aria-modal="true" aria-label="画像拡大表示">
+          <button type="button" class="image-modal-close" data-modal-close aria-label="閉じる">×</button>
+          <img id="image-modal-img" src="" alt="" class="image-modal-img" />
+        </div>
+      </div>
+
+      <footer class="mx-auto w-full max-w-6xl px-4 pb-10 sm:px-6 lg:px-8">
+        <section class="school-card p-5 sm:p-7">
+          <h2 class="school-section-title text-xl sm:text-2xl" style="font-family: 'Kaisei Decol', serif">使い魔プロジェクト2026</h2>
+          <p class="mt-4 text-sm font-bold leading-relaxed text-emerald-900/90 sm:text-base" style="font-family: 'Kaisei Decol', serif">
+            ハッピーバースデー堰代ミコ！<br />
+            ここは堰代ミコのファン（使い魔）有志による企画Webサイトです。<br />
+            このページの内容は妄想企画であり、パラレルワールドです！<br />
+            <a
+              href="https://x.com/tsukaimaproject"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="underline decoration-2 underline-offset-2 transition hover:text-emerald-600"
+            >
+              お問い合わせ（Twitterへ飛びます）
+            </a>
+          </p>
+        </section>
+      </footer>
+    </div>
+
+    <script>
+      (() => {
+        const body = document.body;
+        const reveal = () => body.classList.remove("is-loading");
+        window.addEventListener(
+          "load",
+          () => {
+            setTimeout(reveal, 350);
+          },
+          { once: true }
+        );
+        setTimeout(reveal, 4000);
+      })();
+
+      (() => {
+        const body = document.body;
+        const modal = document.getElementById("image-modal");
+        const modalImg = document.getElementById("image-modal-img");
+        const triggers = document.querySelectorAll("[data-expandable-image]");
+        const closeTargets = document.querySelectorAll("[data-modal-close]");
+
+        if (!modal || !modalImg || triggers.length === 0) return;
+
+        const closeModal = () => {
+          modal.classList.add("hidden");
+          modal.setAttribute("aria-hidden", "true");
+          body.classList.remove("modal-open");
+          modalImg.src = "";
+          modalImg.alt = "";
+        };
+
+        triggers.forEach((trigger) => {
+          trigger.addEventListener("click", () => {
+            const src = trigger.getAttribute("data-image-src");
+            const alt = trigger.getAttribute("data-image-alt") || "";
+            if (!src) return;
+            modalImg.src = src;
+            modalImg.alt = alt;
+            modal.classList.remove("hidden");
+            modal.setAttribute("aria-hidden", "false");
+            body.classList.add("modal-open");
+          });
+        });
+
+        closeTargets.forEach((target) => {
+          target.addEventListener("click", closeModal);
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && !modal.classList.contains("hidden")) {
+            closeModal();
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
