@@ -169,18 +169,53 @@
 
   .school-emblem {
     align-items: center;
-    background: linear-gradient(180deg, #14532d 0%, #065f46 100%);
-    border: 2px solid rgba(255, 255, 255, 0.72);
+    background:
+      radial-gradient(circle at 30% 28%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0) 34%),
+      linear-gradient(180deg, #166534 0%, #065f46 100%);
+    border: 2px solid rgba(255, 255, 255, 0.86);
     border-radius: 999px;
-    box-shadow: 0 10px 20px rgba(6, 78, 59, 0.2);
+    box-shadow:
+      0 10px 20px rgba(6, 78, 59, 0.2),
+      0 0 0 4px rgba(16, 185, 129, 0.16);
     color: #ecfdf5;
     display: inline-flex;
-    font-size: 0.78rem;
+    font-size: 0.85rem;
     font-weight: 800;
-    height: 2.4rem;
+    height: 3rem;
     justify-content: center;
-    letter-spacing: 0.05em;
-    width: 2.4rem;
+    letter-spacing: 0.04em;
+    position: relative;
+    text-shadow: 0 1px 0 rgba(6, 78, 59, 0.6);
+    width: 3rem;
+  }
+
+  .school-emblem::before {
+    color: rgba(6, 95, 70, 0.95);
+    content: "✦";
+    font-size: 0.62rem;
+    left: 50%;
+    position: absolute;
+    top: -0.52rem;
+    transform: translateX(-50%);
+  }
+
+  .school-emblem::after {
+    background: linear-gradient(180deg, #ecfdf5 0%, #d1fae5 100%);
+    border: 1px solid rgba(6, 78, 59, 0.28);
+    border-radius: 999px;
+    bottom: -0.8rem;
+    box-shadow: 0 6px 12px rgba(6, 78, 59, 0.14);
+    color: #065f46;
+    content: attr(data-ribbon);
+    font-size: 0.48rem;
+    font-weight: 800;
+    left: 50%;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    padding: 0.21rem 0.5rem 0.19rem;
+    position: absolute;
+    transform: translateX(-50%);
+    white-space: nowrap;
   }
 
   .card-board .school-card-head {
