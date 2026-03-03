@@ -16,13 +16,17 @@
 
 @layer components {
   .page-shell {
+    filter: none;
     position: relative;
-    transition: opacity 1000ms ease;
+    transform: translateY(0);
+    transition: opacity 1000ms ease, transform 1000ms ease, filter 1000ms ease;
     z-index: 10;
   }
 
   .school-body.is-loading .page-shell {
+    filter: blur(8px);
     opacity: 0;
+    transform: translateY(14px);
   }
 
   .sticker-layer {
@@ -57,19 +61,23 @@
       radial-gradient(circle at 20% 0%, rgba(74, 222, 128, 0.35) 0%, rgba(74, 222, 128, 0) 40%),
       linear-gradient(180deg, rgba(239, 249, 241, 0.98) 0%, rgba(216, 239, 221, 0.98) 100%);
     display: flex;
+    filter: blur(8px);
     inset: 0;
     justify-content: center;
     opacity: 0;
     pointer-events: none;
     position: fixed;
-    transition: opacity 1000ms ease, visibility 1000ms ease;
+    transform: scale(1.015);
+    transition: opacity 1000ms ease, visibility 1000ms ease, filter 1000ms ease, transform 1000ms ease;
     visibility: hidden;
     z-index: 50;
   }
 
   .school-body.is-loading .page-loader {
+    filter: none;
     opacity: 1;
     pointer-events: auto;
+    transform: scale(1);
     visibility: visible;
   }
 
