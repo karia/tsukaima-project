@@ -281,7 +281,25 @@
         const stickerLayer = document.getElementById("sticker-layer");
         if (!stickerLayer) return;
         const seed = 20260305;
-        const stickerNames = Array.from({ length: 18 }, (_, index) => `sticker-${String(index + 1).padStart(2, "0")}`);
+        const stickerNames = [
+          "sticker-01",
+          "sticker-02",
+          "sticker-03",
+          "sticker-04",
+          "sticker-05",
+          "sticker-06",
+          "sticker-07",
+          "sticker-08",
+          "sticker-10",
+          "sticker-11",
+          "sticker-12",
+          "sticker-13",
+          "sticker-14",
+          "sticker-15",
+          "sticker-16",
+          "sticker-17",
+          "sticker-18",
+        ];
 
         const createSeededRng = (inputSeed) => {
           let state = inputSeed >>> 0;

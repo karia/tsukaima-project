@@ -24,7 +24,7 @@ GitHub Pages は `main` ブランチの `docs/` 配下を配信します。
 - `seat-map`
 - `profile-mico`
 - `profile-tsukaima`
-- `sticker-01` 〜 `sticker-18`
+- `sticker-01` 〜 `sticker-18`（`sticker-09` は欠番）
 
 表示用は `.webp`、ダウンロード用（プロフィール帳のみ）は `.png` で出力します。
 
