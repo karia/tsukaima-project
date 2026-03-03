@@ -21,16 +21,22 @@
     style="font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', sans-serif"
   >
     <main class="school-main grid w-full gap-8 sm:px-6 lg:px-8">
-      <section class="pb-2 sm:pb-4">
+      <section class="hero-stage pb-2 sm:pb-4">
         <img
           src="./assets/img/key-visual.png"
           alt="ななし学園3年5組 キービジュアル"
-          class="h-auto w-full rounded-3xl object-cover shadow-[0_18px_45px_rgba(16,79,42,0.2)]"
+          class="hero-image h-auto w-full rounded-3xl object-cover shadow-[0_18px_45px_rgba(16,79,42,0.2)]"
           decoding="async"
         />
-        <h1 class="school-title mt-4 text-center text-3xl font-extrabold leading-tight tracking-tight sm:mt-5 sm:text-5xl" style="font-family: 'Zen Maru Gothic', sans-serif">
-          ななし学園3年5組
-        </h1>
+        <div class="mt-4 flex items-center justify-center gap-3 sm:mt-5">
+          <span class="school-emblem" aria-hidden="true">3-5</span>
+          <h1 class="school-title text-center text-3xl font-extrabold leading-tight tracking-tight sm:text-5xl" style="font-family: 'Zen Maru Gothic', sans-serif">
+            ななし学園3年5組
+          </h1>
+        </div>
+        <p class="hero-subtitle mt-3 text-center text-sm font-bold tracking-[0.18em] text-emerald-800 sm:text-base">
+          SPECIAL BIRTHDAY CLASS PAGE
+        </p>
       </section>
 
       <nav
@@ -80,7 +86,7 @@
         </p>
       </section>
 
-      <section id="message-board" class="school-card">
+      <section id="message-board" class="school-card card-board">
         <div class="school-card-head px-5 py-3 sm:px-7 sm:py-4">
           <h2 class="school-section-title text-2xl" style="font-family: 'Zen Maru Gothic', sans-serif">寄せ書きの紹介</h2>
         </div>
@@ -99,7 +105,7 @@
         </div>
       </section>
 
-      <section id="seat-map" class="school-card">
+      <section id="seat-map" class="school-card card-seat">
         <div class="school-card-head px-5 py-3 sm:px-7 sm:py-4">
           <h2 class="school-section-title text-2xl" style="font-family: 'Zen Maru Gothic', sans-serif">クラスの座席表</h2>
         </div>
@@ -120,7 +126,7 @@
         </div>
       </section>
 
-      <section id="profile-book" class="school-card">
+      <section id="profile-book" class="school-card card-profile">
         <div class="school-card-head px-5 py-3 sm:px-7 sm:py-4">
           <h2 class="school-section-title text-2xl" style="font-family: 'Zen Maru Gothic', sans-serif">プロフィール帳</h2>
         </div>
@@ -183,7 +189,7 @@
         </div>
       </section>
 
-      <section id="links" class="school-card">
+      <section id="links" class="school-card card-links">
         <div class="school-card-head px-5 py-3 sm:px-7 sm:py-4">
           <h2 class="school-section-title text-2xl" style="font-family: 'Zen Maru Gothic', sans-serif">関連リンク</h2>
         </div>

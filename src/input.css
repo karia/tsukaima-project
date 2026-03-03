@@ -51,6 +51,7 @@
     color: #064e3b;
     letter-spacing: -0.02em;
     text-align: center;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
   }
 
   .school-nav {
@@ -101,5 +102,93 @@
     border-radius: var(--school-radius);
     box-shadow: var(--school-shadow-soft);
     text-align: center;
+  }
+
+  .hero-stage {
+    position: relative;
+  }
+
+  .hero-stage::before {
+    border: 1px dashed rgba(6, 78, 59, 0.25);
+    border-radius: 1.8rem;
+    content: "";
+    inset: -0.65rem -0.65rem auto;
+    pointer-events: none;
+    position: absolute;
+    top: -0.65rem;
+    z-index: -1;
+  }
+
+  .hero-image {
+    border: 1px solid rgba(6, 78, 59, 0.2);
+  }
+
+  .hero-subtitle {
+    color: #0f5132;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
+  }
+
+  .school-emblem {
+    align-items: center;
+    background: linear-gradient(180deg, #14532d 0%, #065f46 100%);
+    border: 2px solid rgba(255, 255, 255, 0.72);
+    border-radius: 999px;
+    box-shadow: 0 10px 20px rgba(6, 78, 59, 0.2);
+    color: #ecfdf5;
+    display: inline-flex;
+    font-size: 0.78rem;
+    font-weight: 800;
+    height: 2.4rem;
+    justify-content: center;
+    letter-spacing: 0.05em;
+    width: 2.4rem;
+  }
+
+  .card-board .school-card-head {
+    background: linear-gradient(180deg, rgba(187, 247, 208, 0.85) 0%, rgba(220, 252, 231, 0.7) 100%);
+  }
+
+  .card-board img {
+    box-shadow: 0 12px 28px rgba(5, 84, 58, 0.13);
+  }
+
+  .card-seat .school-card-head {
+    background: linear-gradient(180deg, rgba(167, 243, 208, 0.84) 0%, rgba(209, 250, 229, 0.7) 100%);
+  }
+
+  .card-seat .overflow-x-auto {
+    background:
+      linear-gradient(180deg, rgba(236, 253, 245, 0.92) 0%, rgba(209, 250, 229, 0.55) 100%),
+      repeating-linear-gradient(
+        to bottom,
+        rgba(16, 185, 129, 0.1) 0,
+        rgba(16, 185, 129, 0.1) 1px,
+        transparent 1px,
+        transparent 24px
+      );
+  }
+
+  .card-profile .school-card-head {
+    background: linear-gradient(180deg, rgba(190, 242, 100, 0.38) 0%, rgba(220, 252, 231, 0.8) 100%);
+  }
+
+  .card-profile figure {
+    background: rgba(255, 255, 255, 0.66);
+    border: 1px solid rgba(6, 95, 70, 0.16);
+    border-radius: 1rem;
+    padding: 0.55rem 0.55rem 0.7rem;
+  }
+
+  .card-links .school-card-head {
+    background: linear-gradient(180deg, rgba(165, 243, 252, 0.42) 0%, rgba(220, 252, 231, 0.82) 100%);
+  }
+
+  .card-links a {
+    border: 1px solid var(--school-border-strong);
+    box-shadow: 0 8px 18px rgba(5, 84, 58, 0.1);
+  }
+
+  .card-links a:hover {
+    transform: translateY(-1px);
   }
 }
