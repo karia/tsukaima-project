@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;500;700&family=Mochiy+Pop+One&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Old+Mincho:wght@700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./assets/style.css?v=20260304-1" />
+    <link rel="stylesheet" href="./assets/style.css?v=20260304-3" />
   </head>
   <body
     class="school-body is-loading"
@@ -23,6 +23,7 @@
     <div id="page-loader" class="page-loader" role="status" aria-live="polite">
       <p class="page-loader-text">Nanashi Gakuen 2026.03.05</p>
     </div>
+    <div id="sticker-layer" class="sticker-layer" aria-hidden="true"></div>
 
     <div class="page-shell">
       <main class="school-main grid w-full gap-8 sm:px-6 lg:px-8">
@@ -274,6 +275,37 @@
           { once: true }
         );
         setTimeout(reveal, 4000);
+      })();
+
+      (() => {
+        const stickerLayer = document.getElementById("sticker-layer");
+        if (!stickerLayer) return;
+
+        const buildSticker = (item) => {
+          const sticker = document.createElement("img");
+          sticker.className = "bg-sticker";
+          sticker.src = `./assets/effects/stickers/${item.name}.webp`;
+          sticker.alt = "";
+          sticker.loading = "lazy";
+          sticker.decoding = "async";
+          sticker.style.top = `${item.top}%`;
+          sticker.style.left = `${item.left}%`;
+          sticker.style.transform = `translate(-50%, -50%) rotate(${item.rotate}deg) scale(${item.scale})`;
+          sticker.style.opacity = String(item.opacity);
+          return sticker;
+        };
+
+        fetch("./assets/effects/sticker-layout.json")
+          .then((response) => (response.ok ? response.json() : null))
+          .then((data) => {
+            if (!data || !Array.isArray(data.items)) return;
+            data.items.forEach((item) => {
+              stickerLayer.appendChild(buildSticker(item));
+            });
+          })
+          .catch(() => {
+            // no-op for local file:// preview
+          });
       })();
 
       (() => {

@@ -16,11 +16,29 @@
 
 @layer components {
   .page-shell {
+    position: relative;
     transition: opacity 280ms ease;
+    z-index: 10;
   }
 
   .school-body.is-loading .page-shell {
     opacity: 0;
+  }
+
+  .sticker-layer {
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    position: fixed;
+    z-index: 3;
+  }
+
+  .bg-sticker {
+    height: auto;
+    position: absolute;
+    transform-origin: center;
+    user-select: none;
+    width: clamp(80px, 9vw, 128px);
   }
 
   .page-loader {
@@ -427,6 +445,10 @@
       padding: 0.5rem;
     }
 
+    .bg-sticker {
+      width: clamp(56px, 12vw, 92px);
+    }
+
     .image-modal-content {
       max-width: 99vw;
       padding: 0.15rem;
@@ -439,6 +461,10 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
+    .sticker-layer {
+      display: none;
+    }
+
     .hero-stage,
     .school-nav,
     .school-note,
