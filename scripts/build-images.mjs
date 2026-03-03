@@ -78,16 +78,40 @@ const createSeededRng = (seed) => {
   };
 };
 
-const generateStickerLayout = (stickerNames, seed = 20260305) => {
+const shuffleWithSeed = (items, seed) => {
   const rand = createSeededRng(seed);
-  return stickerNames.map((name) => ({
-    name,
-    top: Number((rand() * 92 + 2).toFixed(3)),
-    left: Number((rand() * 92 + 2).toFixed(3)),
-    rotate: Number(((rand() * 36) - 18).toFixed(3)),
-    scale: Number((0.7 + rand() * 0.65).toFixed(3)),
-    opacity: Number((0.12 + rand() * 0.16).toFixed(3)),
-  }));
+  const array = [...items];
+  for (let i = array.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(rand() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
+
+const generateStickerLayout = (stickerNames, seed = 20260305) => {
+  const shuffled = shuffleWithSeed(stickerNames, seed);
+  const count = shuffled.length;
+  const cols = Math.ceil(Math.sqrt(count * 1.8));
+  const rows = Math.ceil(count / cols);
+  const leftStart = 8;
+  const leftEnd = 92;
+  const topStart = 14;
+  const topEnd = 88;
+  const leftStep = cols > 1 ? (leftEnd - leftStart) / (cols - 1) : 0;
+  const topStep = rows > 1 ? (topEnd - topStart) / (rows - 1) : 0;
+
+  return shuffled.map((name, index) => {
+    const row = Math.floor(index / cols);
+    const col = index % cols;
+    return {
+      name,
+      top: Number((topStart + topStep * row).toFixed(3)),
+      left: Number((leftStart + leftStep * col).toFixed(3)),
+      rotate: 0,
+      scale: 1,
+      opacity: 0.18,
+    };
+  });
 };
 
 const writeStickerLayout = async (layout) => {
