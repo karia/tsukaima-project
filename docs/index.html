@@ -263,6 +263,7 @@
       </footer>
     </div>
 
+    <script src="./assets/effects/sticker-layout.js"></script>
     <script>
       (() => {
         const body = document.body;
@@ -295,17 +296,11 @@
           return sticker;
         };
 
-        fetch("./assets/effects/sticker-layout.json")
-          .then((response) => (response.ok ? response.json() : null))
-          .then((data) => {
-            if (!data || !Array.isArray(data.items)) return;
-            data.items.forEach((item) => {
-              stickerLayer.appendChild(buildSticker(item));
-            });
-          })
-          .catch(() => {
-            // no-op for local file:// preview
-          });
+        const data = window.STICKER_LAYOUT;
+        if (!data || !Array.isArray(data.items)) return;
+        data.items.forEach((item) => {
+          stickerLayer.appendChild(buildSticker(item));
+        });
       })();
 
       (() => {

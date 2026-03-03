@@ -8,6 +8,7 @@ const webpDir = path.join(root, "docs/assets/img");
 const downloadsDir = path.join(root, "docs/assets/downloads");
 const stickersDir = path.join(root, "docs/assets/effects/stickers");
 const stickerLayoutPath = path.join(root, "docs/assets/effects/sticker-layout.json");
+const stickerLayoutJsPath = path.join(root, "docs/assets/effects/sticker-layout.js");
 
 const displayNames = ["key-visual", "message-board", "seat-map", "profile-mico", "profile-tsukaima"];
 const downloadNames = ["profile-mico", "profile-tsukaima"];
@@ -96,6 +97,8 @@ const writeStickerLayout = async (layout) => {
     items: layout,
   };
   await fs.writeFile(stickerLayoutPath, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
+  const jsPayload = `window.STICKER_LAYOUT = ${JSON.stringify(payload)};\n`;
+  await fs.writeFile(stickerLayoutJsPath, jsPayload, "utf8");
 };
 
 const main = async () => {
