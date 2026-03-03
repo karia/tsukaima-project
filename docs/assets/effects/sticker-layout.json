@@ -1,10 +1,10 @@
 {
   "seed": 20260305,
-  "generatedAt": "2026-03-03T18:47:28.091Z",
+  "generatedAt": "2026-03-03T18:48:32.755Z",
   "items": [
     {
       "name": "sticker-17",
-      "top": 20,
+      "top": 2,
       "left": 20,
       "rotate": 0,
       "scale": 1,
@@ -12,7 +12,7 @@
     },
     {
       "name": "sticker-16",
-      "top": 20,
+      "top": 2,
       "left": 70,
       "rotate": 0,
       "scale": 1,
@@ -20,7 +20,7 @@
     },
     {
       "name": "sticker-10",
-      "top": 26.75,
+      "top": 14,
       "left": 35,
       "rotate": 0,
       "scale": 1,
@@ -28,7 +28,7 @@
     },
     {
       "name": "sticker-13",
-      "top": 26.75,
+      "top": 14,
       "left": 85,
       "rotate": 0,
       "scale": 1,
@@ -36,7 +36,7 @@
     },
     {
       "name": "sticker-09",
-      "top": 33.5,
+      "top": 26,
       "left": 20,
       "rotate": 0,
       "scale": 1,
@@ -44,7 +44,7 @@
     },
     {
       "name": "sticker-15",
-      "top": 33.5,
+      "top": 26,
       "left": 70,
       "rotate": 0,
       "scale": 1,
@@ -52,7 +52,7 @@
     },
     {
       "name": "sticker-12",
-      "top": 40.25,
+      "top": 38,
       "left": 35,
       "rotate": 0,
       "scale": 1,
@@ -60,7 +60,7 @@
     },
     {
       "name": "sticker-07",
-      "top": 40.25,
+      "top": 38,
       "left": 85,
       "rotate": 0,
       "scale": 1,
@@ -68,7 +68,7 @@
     },
     {
       "name": "sticker-06",
-      "top": 47,
+      "top": 50,
       "left": 20,
       "rotate": 0,
       "scale": 1,
@@ -76,7 +76,7 @@
     },
     {
       "name": "sticker-18",
-      "top": 47,
+      "top": 50,
       "left": 70,
       "rotate": 0,
       "scale": 1,
@@ -84,7 +84,7 @@
     },
     {
       "name": "sticker-14",
-      "top": 53.75,
+      "top": 62,
       "left": 35,
       "rotate": 0,
       "scale": 1,
@@ -92,7 +92,7 @@
     },
     {
       "name": "sticker-02",
-      "top": 53.75,
+      "top": 62,
       "left": 85,
       "rotate": 0,
       "scale": 1,
@@ -100,7 +100,7 @@
     },
     {
       "name": "sticker-11",
-      "top": 60.5,
+      "top": 74,
       "left": 20,
       "rotate": 0,
       "scale": 1,
@@ -108,7 +108,7 @@
     },
     {
       "name": "sticker-01",
-      "top": 60.5,
+      "top": 74,
       "left": 70,
       "rotate": 0,
       "scale": 1,
@@ -116,7 +116,7 @@
     },
     {
       "name": "sticker-08",
-      "top": 67.25,
+      "top": 86,
       "left": 35,
       "rotate": 0,
       "scale": 1,
@@ -124,7 +124,7 @@
     },
     {
       "name": "sticker-05",
-      "top": 67.25,
+      "top": 86,
       "left": 85,
       "rotate": 0,
       "scale": 1,
@@ -132,7 +132,7 @@
     },
     {
       "name": "sticker-04",
-      "top": 74,
+      "top": 98,
       "left": 20,
       "rotate": 0,
       "scale": 1,
@@ -140,7 +140,7 @@
     },
     {
       "name": "sticker-03",
-      "top": 74,
+      "top": 98,
       "left": 70,
       "rotate": 0,
       "scale": 1,

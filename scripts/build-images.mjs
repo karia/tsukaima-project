@@ -95,8 +95,8 @@ const generateStickerLayout = (stickerNames, seed = 20260305) => {
   const rows = Math.ceil(count / cols);
   const evenRowLefts = [20, 70];
   const oddRowLefts = [35, 85];
-  const topStart = 20;
-  const topEnd = 74;
+  const topStart = 2;
+  const topEnd = 98;
   const topStep = rows > 1 ? (topEnd - topStart) / (rows - 1) : 0;
 
   return shuffled.map((name, index) => {
