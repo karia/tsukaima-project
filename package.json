@@ -1,0 +1,12 @@
+{
+  "name": "tsukaima-project",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./docs/assets/style.css --minify",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./docs/assets/style.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.12",
+    "tailwindcss": "^4.1.12"
+  }
+}
