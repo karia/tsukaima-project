@@ -7,6 +7,7 @@ const rawDir = path.join(root, "raw/images");
 const webpDir = path.join(root, "docs/assets/img");
 const downloadsDir = path.join(root, "docs/assets/downloads");
 const stickersDir = path.join(root, "docs/assets/effects/stickers");
+const iconsDir = path.join(root, "docs/assets/icons");
 
 const displayNames = ["key-visual", "message-board", "seat-map", "profile-mico", "profile-tsukaima"];
 const downloadNames = ["profile-mico", "profile-tsukaima"];
@@ -68,8 +69,21 @@ const buildStickerWebp = async (name) => {
   await sharp(inputPath).webp({ quality: 82 }).toFile(outputPath);
 };
 
+const buildFaviconPng = async () => {
+  const inputPath = await resolveSource("sticker-14");
+  const outputPath = path.join(iconsDir, "favicon.png");
+  await sharp(inputPath)
+    .resize(96, 96, {
+      fit: "contain",
+      background: { r: 0, g: 0, b: 0, alpha: 0 },
+      withoutEnlargement: true,
+    })
+    .png({ compressionLevel: 9 })
+    .toFile(outputPath);
+};
+
 const main = async () => {
-  await Promise.all([ensureDir(webpDir), ensureDir(downloadsDir), ensureDir(stickersDir)]);
+  await Promise.all([ensureDir(webpDir), ensureDir(downloadsDir), ensureDir(stickersDir), ensureDir(iconsDir)]);
 
   for (const name of displayNames) {
     await buildDisplayWebp(name);
@@ -85,9 +99,11 @@ const main = async () => {
     await buildStickerWebp(name);
   }
 
+  await buildFaviconPng();
+
   console.log(
     "Built optimized images:",
-    `${displayNames.length} webp + ${downloadNames.length} download png + ${stickerNames.length} sticker webp`
+    `${displayNames.length} webp + ${downloadNames.length} download png + ${stickerNames.length} sticker webp + 1 favicon png`
   );
 };
 

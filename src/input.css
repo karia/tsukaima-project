@@ -105,10 +105,33 @@
   }
 
   .school-title {
+    align-items: center;
     color: #064e3b;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
     letter-spacing: 0.22em;
     text-align: center;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+  }
+
+  .school-title::before,
+  .school-title::after {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    flex: 0 0 auto;
+    height: clamp(3.2rem, 7.6vw, 4.7rem);
+    width: clamp(3.2rem, 7.6vw, 4.7rem);
+  }
+
+  .school-title::before {
+    background-image: url("./effects/stickers/sticker-01.webp");
+  }
+
+  .school-title::after {
+    background-image: url("./effects/stickers/sticker-03.webp");
   }
 
   .school-nav {
@@ -149,9 +172,40 @@
   }
 
   .school-section-title {
+    align-items: center;
     color: #065f46;
+    display: inline-flex;
     font-family: "Zen Old Mincho", serif;
     font-weight: 800;
+    gap: 0.42rem;
+  }
+
+  .with-sticker-subtitle::before,
+  .with-sticker-subtitle::after {
+    background-image: url("./effects/stickers/sticker-07.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    flex: 0 0 auto;
+    height: 2.2em;
+    width: 2.2em;
+  }
+
+  .with-sticker-nav {
+    gap: 0.38rem;
+  }
+
+  .with-sticker-nav::before,
+  .with-sticker-nav::after {
+    background-image: url("./effects/stickers/sticker-07.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    flex: 0 0 auto;
+    height: 2.1em;
+    width: 2.1em;
   }
 
   .school-note {
@@ -435,6 +489,22 @@
 
     .school-nav-link {
       min-height: 2.75rem;
+    }
+
+    .with-sticker-nav {
+      gap: 0.28rem;
+    }
+
+    .with-sticker-nav::before,
+    .with-sticker-nav::after {
+      height: 1.9em;
+      width: 1.9em;
+    }
+
+    .with-sticker-subtitle::before,
+    .with-sticker-subtitle::after {
+      height: 2em;
+      width: 2em;
     }
 
     .school-card-head {
