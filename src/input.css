@@ -168,6 +168,8 @@
   .school-card-head {
     background: linear-gradient(180deg, rgba(187, 247, 208, 0.75) 0%, rgba(220, 252, 231, 0.75) 100%);
     border-bottom: 2px solid rgba(6, 95, 70, 0.14);
+    display: flex;
+    justify-content: center;
     padding: 0.8rem 1.25rem;
   }
 
@@ -178,6 +180,15 @@
     font-family: "Zen Old Mincho", serif;
     font-weight: 800;
     gap: 0.42rem;
+    justify-content: center;
+    text-align: center;
+  }
+
+  #profile-book,
+  #seat-map,
+  #message-board,
+  #links {
+    scroll-margin-top: 9.5rem;
   }
 
   .with-sticker-subtitle::before,
@@ -509,6 +520,13 @@
 
     .school-card-head {
       padding: 0.72rem 1rem;
+    }
+
+    #profile-book,
+    #seat-map,
+    #message-board,
+    #links {
+      scroll-margin-top: 8.5rem;
     }
 
     .card-profile figure {
