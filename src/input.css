@@ -15,6 +15,45 @@
 }
 
 @layer components {
+  .page-shell {
+    transition: opacity 280ms ease;
+  }
+
+  .school-body.is-loading .page-shell {
+    opacity: 0;
+  }
+
+  .page-loader {
+    align-items: center;
+    background:
+      radial-gradient(circle at 20% 0%, rgba(74, 222, 128, 0.35) 0%, rgba(74, 222, 128, 0) 40%),
+      linear-gradient(180deg, rgba(239, 249, 241, 0.98) 0%, rgba(216, 239, 221, 0.98) 100%);
+    display: flex;
+    inset: 0;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    transition: opacity 280ms ease, visibility 280ms ease;
+    visibility: hidden;
+    z-index: 50;
+  }
+
+  .school-body.is-loading .page-loader {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+  }
+
+  .page-loader-text {
+    animation: loader-pulse 1200ms ease-in-out infinite;
+    color: #065f46;
+    font-size: clamp(1.1rem, 3.2vw, 1.8rem);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.78);
+  }
+
   .school-body {
     color: var(--school-ink);
     background:
@@ -253,6 +292,17 @@
     100% {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  @keyframes loader-pulse {
+    0%,
+    100% {
+      opacity: 0.58;
+    }
+
+    50% {
+      opacity: 1;
     }
   }
 
