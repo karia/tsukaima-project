@@ -49,7 +49,7 @@
         aria-label="ページ内メニュー"
         class="sticky top-3 z-20 overflow-hidden rounded-2xl border border-emerald-900/10 bg-white/85 p-2 shadow-[0_12px_30px_rgba(16,79,42,0.12)] backdrop-blur"
       >
-        <ul class="grid grid-cols-3 gap-2">
+        <ul class="grid grid-cols-2 gap-2 sm:grid-cols-4">
           <li>
             <a
               href="#message-board"
@@ -64,6 +64,14 @@
               class="inline-flex w-full items-center justify-center rounded-xl bg-emerald-50 px-3 py-2 text-sm font-bold text-emerald-900 transition hover:bg-emerald-100 sm:text-base"
             >
               座席表
+            </a>
+          </li>
+          <li>
+            <a
+              href="#profile-book"
+              class="inline-flex w-full items-center justify-center rounded-xl bg-emerald-50 px-3 py-2 text-sm font-bold text-emerald-900 transition hover:bg-emerald-100 sm:text-base"
+            >
+              プロフィール帳
             </a>
           </li>
           <li>
@@ -110,6 +118,45 @@
               src="./assets/img/seat-map.png"
               alt="ななし学園3年5組のクラス座席表"
               class="h-auto min-w-[760px] rounded-xl md:min-w-0 md:w-full"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="profile-book" class="overflow-hidden rounded-3xl border-2 border-emerald-800/20 bg-white/85 shadow-[0_16px_40px_rgba(16,79,42,0.15)]">
+        <div class="border-b-2 border-emerald-800/10 bg-emerald-100/70 px-5 py-3 sm:px-7 sm:py-4">
+          <h2 class="text-2xl font-extrabold text-emerald-900" style="font-family: 'Zen Maru Gothic', sans-serif">プロフィール帳</h2>
+        </div>
+        <div class="space-y-4 p-4 sm:p-6">
+          <p class="text-sm font-bold tracking-wide text-emerald-800/90 sm:text-base">
+            プロフィール帳を用意したので皆さん自由に書き込んでくださいね。
+          </p>
+          <p class="text-sm font-bold tracking-wide text-emerald-800/90 sm:text-base">
+            書いたものは
+            <a
+              href="https://x.com/search?q=%23%E3%81%AA%E3%81%AA%E3%81%97%E5%AD%A6%E5%9C%923%E5%B9%B45%E7%B5%84&src=typed_query&f=live"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="underline decoration-2 underline-offset-2 transition hover:text-emerald-600"
+            >
+              #ななし学園3年5組
+            </a>
+            のハッシュタグで共有してください。
+          </p>
+          <div class="grid gap-4 md:grid-cols-2">
+            <img
+              src="./assets/img/profile-mico.png"
+              alt="堰代ミコさん向けプロフィール帳"
+              class="h-auto w-full rounded-2xl border border-emerald-900/10 object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+            <img
+              src="./assets/img/profile-tsukaima.png"
+              alt="使い魔向けプロフィール帳"
+              class="h-auto w-full rounded-2xl border border-emerald-900/10 object-cover"
               loading="lazy"
               decoding="async"
             />
