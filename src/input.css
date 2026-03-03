@@ -170,52 +170,78 @@
   .school-emblem {
     align-items: center;
     background:
-      radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0) 34%),
-      linear-gradient(180deg, #1e3a8a 0%, #1e1b4b 100%);
-    border: 2px solid #f8f0c4;
-    border-radius: 999px;
+      radial-gradient(circle at 32% 26%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 34%),
+      linear-gradient(180deg, #9f1239 0%, #7f1d1d 100%);
+    border: 1px dashed rgba(255, 241, 242, 0.72);
     box-shadow:
-      0 10px 20px rgba(30, 27, 75, 0.24),
-      0 0 0 4px rgba(250, 204, 21, 0.25);
-    color: #fef9c3;
+      0 12px 20px rgba(127, 29, 29, 0.28),
+      0 0 0 3px rgba(225, 29, 72, 0.14);
+    clip-path: polygon(
+      50% 0%,
+      59% 6%,
+      69% 2%,
+      78% 10%,
+      90% 10%,
+      93% 22%,
+      100% 31%,
+      96% 42%,
+      100% 50%,
+      96% 58%,
+      100% 69%,
+      93% 78%,
+      90% 90%,
+      78% 90%,
+      69% 98%,
+      59% 94%,
+      50% 100%,
+      41% 94%,
+      31% 98%,
+      22% 90%,
+      10% 90%,
+      7% 78%,
+      0% 69%,
+      4% 58%,
+      0% 50%,
+      4% 42%,
+      0% 31%,
+      7% 22%,
+      10% 10%,
+      22% 10%,
+      31% 2%,
+      41% 6%
+    );
+    color: #fff1f2;
     display: inline-flex;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 800;
-    height: 3rem;
+    height: 3.2rem;
     justify-content: center;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
     position: relative;
-    text-shadow: 0 1px 0 rgba(30, 27, 75, 0.6);
-    width: 3rem;
+    text-shadow: 0 1px 0 rgba(69, 10, 10, 0.65);
+    transform: rotate(-7deg);
+    width: 3.2rem;
   }
 
   .school-emblem::before {
-    color: #1e1b4b;
-    content: "◆";
-    font-size: 0.5rem;
-    left: 50%;
+    border: 1px solid rgba(255, 228, 230, 0.72);
+    border-radius: 999px;
+    content: "";
+    inset: 0.35rem;
     position: absolute;
-    top: -0.42rem;
-    transform: translateX(-50%);
+    z-index: -1;
   }
 
   .school-emblem::after {
-    background: linear-gradient(180deg, #fefce8 0%, #fde68a 100%);
-    border: 1px solid rgba(146, 64, 14, 0.38);
-    bottom: -0.86rem;
-    box-shadow: 0 6px 12px rgba(30, 27, 75, 0.2);
-    clip-path: polygon(0 50%, 10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%);
-    color: #1e1b4b;
+    bottom: -0.78rem;
+    color: rgba(127, 29, 29, 0.82);
     content: attr(data-ribbon);
-    font-size: 0.47rem;
+    font-size: 0.42rem;
     font-weight: 800;
     left: 50%;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.14em;
     line-height: 1;
-    min-width: 4.3rem;
-    padding: 0.23rem 0.52rem 0.2rem;
     position: absolute;
-    text-align: center;
     transform: translateX(-50%);
     white-space: nowrap;
   }
