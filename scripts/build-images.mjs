@@ -90,26 +90,28 @@ const shuffleWithSeed = (items, seed) => {
 
 const generateStickerLayout = (stickerNames, seed = 20260305) => {
   const shuffled = shuffleWithSeed(stickerNames, seed);
-  const count = shuffled.length;
-  const cols = 2;
-  const rows = Math.ceil(count / cols);
-  const evenRowLefts = [20, 70];
-  const oddRowLefts = [35, 85];
-  const topStart = 2;
-  const topEnd = 98;
-  const topStep = rows > 1 ? (topEnd - topStart) / (rows - 1) : 0;
+  const placements = shuffled.length * 10;
+  const topBase = 2;
+  const topRange = 96;
+  const topStep = 1.2;
+  const leftBase = 8;
+  const leftRange = 84;
+  const leftStep = 5;
 
-  return shuffled.map((name, index) => {
-    const row = Math.floor(index / cols);
-    const col = index % cols;
-    const lefts = row % 2 === 0 ? evenRowLefts : oddRowLefts;
+  return Array.from({ length: placements }, (_, index) => {
+    const row = Math.floor(index / 2);
+    const col = index % 2;
+    const name = shuffled[index % shuffled.length];
+    const top = topBase + ((row * topStep) % topRange);
+    const leftOffset = row * leftStep + (row % 2 === 0 ? 0 : 2.5) + (col === 0 ? 0 : 2.2);
+    const left = leftBase + (leftOffset % leftRange);
     return {
       name,
-      top: Number((topStart + topStep * row).toFixed(3)),
-      left: Number(lefts[col].toFixed(3)),
+      top: Number(top.toFixed(3)),
+      left: Number(left.toFixed(3)),
       rotate: 0,
       scale: 1,
-      opacity: 0.18,
+      opacity: 0.14,
     };
   });
 };
