@@ -24,8 +24,14 @@ GitHub Pages は `main` ブランチの `docs/` 配下を配信します。
 - `seat-map`
 - `profile-mico`
 - `profile-tsukaima`
+- `sticker-01` 〜 `sticker-18`（`sticker-09` は欠番）
 
 表示用は `.webp`、ダウンロード用（プロフィール帳のみ）は `.png` で出力します。
+
+### 背景ステッカー演出
+- 元画像は `raw/images/sticker-XX.png` で管理
+- `npm run build:images` で `docs/assets/effects/stickers/sticker-XX.webp` を生成
+- 背景配置は `index.html` 内JSで固定ピッチ描画（並び順のみ固定seedシャッフル）
 
 ## 開発手順
 1. 依存関係をインストール

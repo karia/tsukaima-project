@@ -14,15 +14,15 @@
       href="https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;500;700&family=Mochiy+Pop+One&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Old+Mincho:wght@700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./assets/style.css?v=20260304-1" />
+    <link rel="icon" type="image/png" href="./assets/icons/favicon.png" />
+    <link rel="stylesheet" href="./assets/style.css?v=20260304-12" />
   </head>
   <body
     class="school-body is-loading"
     style="font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', sans-serif"
   >
-    <div id="page-loader" class="page-loader" role="status" aria-live="polite">
-      <p class="page-loader-text">Nanashi Gakuen 2026.03.05</p>
-    </div>
+    <div id="page-loader" class="page-loader" aria-hidden="true"></div>
+    <div id="sticker-layer" class="sticker-layer" aria-hidden="true"></div>
 
     <div class="page-shell">
       <main class="school-main grid w-full gap-8 sm:px-6 lg:px-8">
@@ -49,7 +49,7 @@
           <li>
             <a
               href="#profile-book"
-              class="school-nav-link inline-flex w-full items-center justify-center px-3 py-2 text-sm sm:text-base"
+              class="school-nav-link with-sticker-nav inline-flex w-full items-center justify-center px-3 py-2 text-sm sm:text-base"
             >
               プロフィール帳
             </a>
@@ -57,7 +57,7 @@
           <li>
             <a
               href="#seat-map"
-              class="school-nav-link inline-flex w-full items-center justify-center px-3 py-2 text-sm sm:text-base"
+              class="school-nav-link with-sticker-nav inline-flex w-full items-center justify-center px-3 py-2 text-sm sm:text-base"
             >
               座席表
             </a>
@@ -65,7 +65,7 @@
           <li>
             <a
               href="#message-board"
-              class="school-nav-link inline-flex w-full items-center justify-center px-3 py-2 text-sm sm:text-base"
+              class="school-nav-link with-sticker-nav inline-flex w-full items-center justify-center px-3 py-2 text-sm sm:text-base"
             >
               寄せ書き
             </a>
@@ -73,7 +73,7 @@
           <li>
             <a
               href="#links"
-              class="school-nav-link inline-flex w-full items-center justify-center px-3 py-2 text-sm sm:text-base"
+              class="school-nav-link with-sticker-nav inline-flex w-full items-center justify-center px-3 py-2 text-sm sm:text-base"
             >
               リンク
             </a>
@@ -89,7 +89,7 @@
 
       <section id="profile-book" class="school-card card-profile">
         <div class="school-card-head px-5 py-3 sm:px-7 sm:py-4">
-          <h2 class="school-section-title text-2xl">プロフィール帳</h2>
+          <h2 class="school-section-title with-sticker-subtitle text-2xl">プロフィール帳</h2>
         </div>
         <div class="space-y-4 p-4 sm:p-6">
           <p class="text-sm font-bold tracking-wide text-emerald-800/90 sm:text-base">
@@ -152,11 +152,11 @@
 
       <section id="seat-map" class="school-card card-seat">
         <div class="school-card-head px-5 py-3 sm:px-7 sm:py-4">
-          <h2 class="school-section-title text-2xl">クラスの座席表</h2>
+          <h2 class="school-section-title with-sticker-subtitle text-2xl">クラスの座席表</h2>
         </div>
         <div class="space-y-4 p-4 sm:p-6">
           <p class="text-sm font-bold tracking-wide text-emerald-800/90 sm:text-base">
-            学園企画の世界観に合わせて作成した、3年5組のクラス座席表です。
+            とある日の「ななし学園」3年5組の座席表を作ってみました！といっても使い魔（チャンネル登録者数）は11万人いるので、とてもこの教室には入りきりませんね！あなたの席はどこがいいですか？
           </p>
           <button
             type="button"
@@ -180,12 +180,11 @@
 
       <section id="message-board" class="school-card card-board">
         <div class="school-card-head px-5 py-3 sm:px-7 sm:py-4">
-          <h2 class="school-section-title text-2xl">寄せ書きの紹介</h2>
+          <h2 class="school-section-title with-sticker-subtitle text-2xl">寄せ書きの紹介</h2>
         </div>
         <div class="space-y-4 p-4 sm:p-6">
           <p class="text-sm font-bold tracking-wide text-emerald-800/90 sm:text-base">
-            クラスのみんなから集まったメッセージを、1枚の寄せ書きにまとめました。
-            たくさんの「おめでとう」の気持ちをぜひ受け取ってください。
+            3年5組のクラスのみんなから、お誕生日のお祝いメッセージです！
           </p>
           <button
             type="button"
@@ -209,16 +208,25 @@
 
       <section id="links" class="school-card card-links">
         <div class="school-card-head px-5 py-3 sm:px-7 sm:py-4">
-          <h2 class="school-section-title text-2xl">関連リンク</h2>
+          <h2 class="school-section-title with-sticker-subtitle text-2xl">関連リンク</h2>
         </div>
         <div class="grid gap-3 p-4 sm:p-6">
+          <a
+            href="https://www.youtube.com/@Mico_Sekishiro"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-between rounded-2xl border border-emerald-900/15 bg-emerald-50 px-4 py-3 text-sm font-bold text-emerald-900 transition hover:bg-emerald-100 sm:text-base"
+          >
+            <span>YouTube 堰代ミコ / Mico Channel【ななしいんく】</span>
+            <span aria-hidden="true">↗</span>
+          </a>
           <a
             href="https://x.com/tsukaimaproject"
             target="_blank"
             rel="noopener noreferrer"
             class="inline-flex items-center justify-between rounded-2xl border border-emerald-900/15 bg-emerald-50 px-4 py-3 text-sm font-bold text-emerald-900 transition hover:bg-emerald-100 sm:text-base"
           >
-            <span>企画Twitterアカウント</span>
+            <span>使い魔プロジェクト 企画用Twitterアカウント</span>
             <span aria-hidden="true">↗</span>
           </a>
           <a
@@ -234,32 +242,32 @@
       </section>
       </main>
 
-      <div id="image-modal" class="image-modal hidden" aria-hidden="true">
-        <div class="image-modal-backdrop" data-modal-close></div>
-        <div class="image-modal-content" role="dialog" aria-modal="true" aria-label="画像拡大表示">
-          <button type="button" class="image-modal-close" data-modal-close aria-label="閉じる">×</button>
-          <img id="image-modal-img" src="" alt="" class="image-modal-img" />
-        </div>
-      </div>
-
       <footer class="mx-auto w-full max-w-6xl px-4 pb-10 sm:px-6 lg:px-8">
         <section class="school-card p-5 sm:p-7">
           <h2 class="school-section-title text-xl sm:text-2xl" style="font-family: 'Kaisei Decol', serif">使い魔プロジェクト2026</h2>
           <p class="mt-4 text-sm font-bold leading-relaxed text-emerald-900/90 sm:text-base" style="font-family: 'Kaisei Decol', serif">
             ハッピーバースデー堰代ミコ！<br />
-            ここは堰代ミコのファン（使い魔）有志による企画Webサイトです。<br />
+            ここは堰代ミコのファン（使い魔）有志による非公式企画Webサイトです。<br />
             このページの内容は妄想企画であり、パラレルワールドです！<br />
+            このページにある素材は、ななしいんく関連の配信・二次創作であればご自由にお使いください。<br />
             <a
               href="https://x.com/tsukaimaproject"
               target="_blank"
               rel="noopener noreferrer"
               class="underline decoration-2 underline-offset-2 transition hover:text-emerald-600"
             >
-              お問い合わせ（Twitterへ飛びます）
+              お問い合わせ（TwitterのDMでお願いします）
             </a>
           </p>
         </section>
       </footer>
+    </div>
+    <div id="image-modal" class="image-modal hidden" aria-hidden="true">
+      <div class="image-modal-backdrop" data-modal-close></div>
+      <div class="image-modal-content" role="dialog" aria-modal="true" aria-label="画像拡大表示">
+        <button type="button" class="image-modal-close" data-modal-close aria-label="閉じる">×</button>
+        <img id="image-modal-img" src="" alt="" class="image-modal-img" />
+      </div>
     </div>
 
     <script>
@@ -269,11 +277,113 @@
         window.addEventListener(
           "load",
           () => {
-            setTimeout(reveal, 350);
+            setTimeout(reveal, 1000);
           },
           { once: true }
         );
-        setTimeout(reveal, 4000);
+        setTimeout(reveal, 3000);
+      })();
+
+      (() => {
+        const stickerLayer = document.getElementById("sticker-layer");
+        if (!stickerLayer) return;
+        const seed = 20260305;
+        const stickerNames = [
+          "sticker-01",
+          "sticker-02",
+          "sticker-03",
+          "sticker-04",
+          "sticker-05",
+          "sticker-06",
+          "sticker-07",
+          "sticker-08",
+          "sticker-10",
+          "sticker-11",
+          "sticker-12",
+          "sticker-13",
+          "sticker-14",
+          "sticker-15",
+          "sticker-16",
+          "sticker-17",
+          "sticker-18",
+        ];
+
+        const createSeededRng = (inputSeed) => {
+          let state = inputSeed >>> 0;
+          return () => {
+            state = (state * 1664525 + 1013904223) >>> 0;
+            return state / 4294967296;
+          };
+        };
+
+        const shuffleWithSeed = (items, inputSeed) => {
+          const rand = createSeededRng(inputSeed);
+          const array = [...items];
+          for (let i = array.length - 1; i > 0; i -= 1) {
+            const j = Math.floor(rand() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+          }
+          return array;
+        };
+
+        const getPageHeight = () => Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, window.innerHeight);
+
+        const buildSticker = (name, top, left) => {
+          const sticker = document.createElement("img");
+          sticker.className = "bg-sticker";
+          sticker.src = `./assets/effects/stickers/${name}.webp`;
+          sticker.alt = "";
+          sticker.loading = "lazy";
+          sticker.decoding = "async";
+          sticker.style.top = `${top}px`;
+          sticker.style.left = `${left}px`;
+          sticker.style.transform = "translate(-50%, -50%)";
+          return sticker;
+        };
+
+        const renderStickers = () => {
+          const shuffled = shuffleWithSeed(stickerNames, seed);
+          const viewportWidth = window.innerWidth;
+          const pageHeight = getPageHeight();
+
+          const xStep = 220;
+          const yStep = 180;
+          const xOffsetEven = 80;
+          const xOffsetOdd = 190;
+          const yStart = 40;
+
+          const cols = Math.max(1, Math.floor((viewportWidth - xOffsetEven) / xStep) + 1);
+          const rows = Math.max(1, Math.ceil((pageHeight - yStart) / yStep) + 1);
+
+          const fragment = document.createDocumentFragment();
+          for (let row = 0; row < rows; row += 1) {
+            const rowOffset = row % 2 === 0 ? xOffsetEven : xOffsetOdd;
+            const top = yStart + row * yStep;
+            for (let col = 0; col < cols; col += 1) {
+              const left = rowOffset + col * xStep;
+              if (left > viewportWidth + 140) continue;
+              const index = row * cols + col;
+              const name = shuffled[index % shuffled.length];
+              fragment.appendChild(buildSticker(name, top, left));
+            }
+          }
+
+          stickerLayer.textContent = "";
+          stickerLayer.style.height = `${pageHeight}px`;
+          stickerLayer.appendChild(fragment);
+        };
+
+        let resizeTimer;
+        const scheduleRender = () => {
+          window.clearTimeout(resizeTimer);
+          resizeTimer = window.setTimeout(() => {
+            window.requestAnimationFrame(renderStickers);
+          }, 100);
+        };
+
+        renderStickers();
+        window.addEventListener("resize", scheduleRender);
+        window.addEventListener("load", scheduleRender);
       })();
 
       (() => {

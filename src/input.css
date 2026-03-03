@@ -16,11 +16,43 @@
 
 @layer components {
   .page-shell {
-    transition: opacity 280ms ease;
+    filter: none;
+    position: relative;
+    transform: translateY(0);
+    transition: opacity 1000ms ease, transform 1000ms ease, filter 1000ms ease;
+    z-index: 10;
   }
 
   .school-body.is-loading .page-shell {
+    filter: blur(8px);
     opacity: 0;
+    transform: translateY(14px);
+  }
+
+  .sticker-layer {
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    z-index: 3;
+  }
+
+  .school-body.is-loading .sticker-layer {
+    position: fixed;
+    z-index: 52;
+  }
+
+  .bg-sticker {
+    height: auto;
+    opacity: 0.14;
+    position: absolute;
+    transform-origin: center;
+    user-select: none;
+    width: clamp(80px, 9vw, 128px);
+  }
+
+  .school-body.is-loading .bg-sticker {
+    opacity: 1;
   }
 
   .page-loader {
@@ -29,29 +61,24 @@
       radial-gradient(circle at 20% 0%, rgba(74, 222, 128, 0.35) 0%, rgba(74, 222, 128, 0) 40%),
       linear-gradient(180deg, rgba(239, 249, 241, 0.98) 0%, rgba(216, 239, 221, 0.98) 100%);
     display: flex;
+    filter: blur(8px);
     inset: 0;
     justify-content: center;
     opacity: 0;
     pointer-events: none;
     position: fixed;
-    transition: opacity 280ms ease, visibility 280ms ease;
+    transform: scale(1.015);
+    transition: opacity 1000ms ease, visibility 1000ms ease, filter 1000ms ease, transform 1000ms ease;
     visibility: hidden;
     z-index: 50;
   }
 
   .school-body.is-loading .page-loader {
+    filter: none;
     opacity: 1;
     pointer-events: auto;
+    transform: scale(1);
     visibility: visible;
-  }
-
-  .page-loader-text {
-    animation: loader-pulse 1200ms ease-in-out infinite;
-    color: #065f46;
-    font-size: clamp(1.1rem, 3.2vw, 1.8rem);
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.78);
   }
 
   .school-body {
@@ -87,10 +114,33 @@
   }
 
   .school-title {
+    align-items: center;
     color: #064e3b;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
     letter-spacing: 0.22em;
     text-align: center;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+  }
+
+  .school-title::before,
+  .school-title::after {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    flex: 0 0 auto;
+    height: clamp(3.2rem, 7.6vw, 4.7rem);
+    width: clamp(3.2rem, 7.6vw, 4.7rem);
+  }
+
+  .school-title::before {
+    background-image: url("./effects/stickers/sticker-01.webp");
+  }
+
+  .school-title::after {
+    background-image: url("./effects/stickers/sticker-03.webp");
   }
 
   .school-nav {
@@ -127,13 +177,55 @@
   .school-card-head {
     background: linear-gradient(180deg, rgba(187, 247, 208, 0.75) 0%, rgba(220, 252, 231, 0.75) 100%);
     border-bottom: 2px solid rgba(6, 95, 70, 0.14);
+    display: flex;
+    justify-content: center;
     padding: 0.8rem 1.25rem;
   }
 
   .school-section-title {
+    align-items: center;
     color: #065f46;
+    display: inline-flex;
     font-family: "Zen Old Mincho", serif;
     font-weight: 800;
+    gap: 0.42rem;
+    justify-content: center;
+    text-align: center;
+  }
+
+  #profile-book,
+  #seat-map,
+  #message-board,
+  #links {
+    scroll-margin-top: 9.5rem;
+  }
+
+  .with-sticker-subtitle::before,
+  .with-sticker-subtitle::after {
+    background-image: url("./effects/stickers/sticker-07.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    flex: 0 0 auto;
+    height: 2.2em;
+    width: 2.2em;
+  }
+
+  .with-sticker-nav {
+    gap: 0.38rem;
+  }
+
+  .with-sticker-nav::before,
+  .with-sticker-nav::after {
+    background-image: url("./effects/stickers/sticker-07.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    flex: 0 0 auto;
+    height: 2.1em;
+    width: 2.1em;
   }
 
   .school-note {
@@ -309,6 +401,7 @@
     inset: 0;
     margin: auto;
     max-height: 98vh;
+    max-height: 98dvh;
     max-width: 98vw;
     padding: 0.25rem;
     position: absolute;
@@ -320,6 +413,7 @@
     box-shadow: 0 20px 55px rgba(2, 6, 23, 0.5);
     height: 100%;
     max-height: calc(98vh - 0.5rem);
+    max-height: calc(98dvh - 0.5rem);
     object-fit: contain;
     width: 100%;
   }
@@ -394,17 +488,6 @@
     }
   }
 
-  @keyframes loader-pulse {
-    0%,
-    100% {
-      opacity: 0.58;
-    }
-
-    50% {
-      opacity: 1;
-    }
-  }
-
   @media (max-width: 640px) {
     .school-main {
       gap: 1.25rem;
@@ -419,12 +502,39 @@
       min-height: 2.75rem;
     }
 
+    .with-sticker-nav {
+      gap: 0.28rem;
+    }
+
+    .with-sticker-nav::before,
+    .with-sticker-nav::after {
+      height: 1.9em;
+      width: 1.9em;
+    }
+
+    .with-sticker-subtitle::before,
+    .with-sticker-subtitle::after {
+      height: 2em;
+      width: 2em;
+    }
+
     .school-card-head {
       padding: 0.72rem 1rem;
     }
 
+    #profile-book,
+    #seat-map,
+    #message-board,
+    #links {
+      scroll-margin-top: 8.5rem;
+    }
+
     .card-profile figure {
       padding: 0.5rem;
+    }
+
+    .bg-sticker {
+      width: clamp(56px, 12vw, 92px);
     }
 
     .image-modal-content {
@@ -439,6 +549,10 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
+    .sticker-layer {
+      display: none;
+    }
+
     .hero-stage,
     .school-nav,
     .school-note,
