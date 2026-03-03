@@ -15,15 +15,13 @@
       rel="stylesheet"
     />
     <link rel="icon" type="image/png" href="./assets/icons/favicon.png" />
-    <link rel="stylesheet" href="./assets/style.css?v=20260304-7" />
+    <link rel="stylesheet" href="./assets/style.css?v=20260304-10" />
   </head>
   <body
     class="school-body is-loading"
     style="font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', sans-serif"
   >
-    <div id="page-loader" class="page-loader" role="status" aria-live="polite">
-      <p class="page-loader-text">Nanashi Gakuen 2026.03.05</p>
-    </div>
+    <div id="page-loader" class="page-loader" aria-hidden="true"></div>
     <div id="sticker-layer" class="sticker-layer" aria-hidden="true"></div>
 
     <div class="page-shell">
@@ -271,11 +269,11 @@
         window.addEventListener(
           "load",
           () => {
-            setTimeout(reveal, 350);
+            setTimeout(reveal, 1000);
           },
           { once: true }
         );
-        setTimeout(reveal, 4000);
+        setTimeout(reveal, 3000);
       })();
 
       (() => {
@@ -332,7 +330,6 @@
           sticker.style.top = `${top}px`;
           sticker.style.left = `${left}px`;
           sticker.style.transform = "translate(-50%, -50%)";
-          sticker.style.opacity = "0.14";
           return sticker;
         };
 

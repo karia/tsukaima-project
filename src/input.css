@@ -17,7 +17,7 @@
 @layer components {
   .page-shell {
     position: relative;
-    transition: opacity 280ms ease;
+    transition: opacity 1000ms ease;
     z-index: 10;
   }
 
@@ -33,12 +33,22 @@
     z-index: 3;
   }
 
+  .school-body.is-loading .sticker-layer {
+    position: fixed;
+    z-index: 52;
+  }
+
   .bg-sticker {
     height: auto;
+    opacity: 0.14;
     position: absolute;
     transform-origin: center;
     user-select: none;
     width: clamp(80px, 9vw, 128px);
+  }
+
+  .school-body.is-loading .bg-sticker {
+    opacity: 1;
   }
 
   .page-loader {
@@ -52,7 +62,7 @@
     opacity: 0;
     pointer-events: none;
     position: fixed;
-    transition: opacity 280ms ease, visibility 280ms ease;
+    transition: opacity 1000ms ease, visibility 1000ms ease;
     visibility: hidden;
     z-index: 50;
   }
@@ -61,15 +71,6 @@
     opacity: 1;
     pointer-events: auto;
     visibility: visible;
-  }
-
-  .page-loader-text {
-    animation: loader-pulse 1200ms ease-in-out infinite;
-    color: #065f46;
-    font-size: clamp(1.1rem, 3.2vw, 1.8rem);
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.78);
   }
 
   .school-body {
@@ -474,17 +475,6 @@
     100% {
       opacity: 1;
       transform: translateY(0);
-    }
-  }
-
-  @keyframes loader-pulse {
-    0%,
-    100% {
-      opacity: 0.58;
-    }
-
-    50% {
-      opacity: 1;
     }
   }
 
