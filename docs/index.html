@@ -48,10 +48,10 @@
         <ul class="grid grid-cols-2 gap-2 sm:grid-cols-4">
           <li>
             <a
-              href="#message-board"
+              href="#profile-book"
               class="school-nav-link inline-flex w-full items-center justify-center px-3 py-2 text-sm sm:text-base"
             >
-              寄せ書き
+              プロフィール帳
             </a>
           </li>
           <li>
@@ -64,10 +64,10 @@
           </li>
           <li>
             <a
-              href="#profile-book"
+              href="#message-board"
               class="school-nav-link inline-flex w-full items-center justify-center px-3 py-2 text-sm sm:text-base"
             >
-              プロフィール帳
+              寄せ書き
             </a>
           </li>
           <li>
@@ -85,63 +85,6 @@
         <p class="mx-auto max-w-3xl text-base font-medium text-emerald-900/85 sm:text-lg">
           使い魔と堰代ミコは「ななし学園3年5組」のクラスメイト。<br />ミコちゃんからプロフィール帳を渡されたあなたは何を書く？
         </p>
-      </section>
-
-      <section id="message-board" class="school-card card-board">
-        <div class="school-card-head px-5 py-3 sm:px-7 sm:py-4">
-          <h2 class="school-section-title text-2xl">寄せ書きの紹介</h2>
-        </div>
-        <div class="space-y-4 p-4 sm:p-6">
-          <p class="text-sm font-bold tracking-wide text-emerald-800/90 sm:text-base">
-            クラスのみんなから集まったメッセージを、1枚の寄せ書きにまとめました。
-            たくさんの「おめでとう」の気持ちをぜひ受け取ってください。
-          </p>
-          <button
-            type="button"
-            class="expand-trigger block w-full overflow-hidden rounded-2xl border border-emerald-900/10"
-            data-expandable-image
-            data-image-src="./assets/img/message-board.png"
-            data-image-alt="堰代ミコさんへの誕生日寄せ書き"
-            aria-label="寄せ書きを拡大表示"
-          >
-            <img
-              src="./assets/img/message-board.png"
-              alt="堰代ミコさんへの誕生日寄せ書き"
-              class="h-auto w-full object-cover"
-              loading="lazy"
-              decoding="async"
-            />
-          </button>
-          <p class="text-right text-xs font-bold tracking-wide text-emerald-700/80">クリックで拡大</p>
-        </div>
-      </section>
-
-      <section id="seat-map" class="school-card card-seat">
-        <div class="school-card-head px-5 py-3 sm:px-7 sm:py-4">
-          <h2 class="school-section-title text-2xl">クラスの座席表</h2>
-        </div>
-        <div class="space-y-4 p-4 sm:p-6">
-          <p class="text-sm font-bold tracking-wide text-emerald-800/90 sm:text-base">
-            学園企画の世界観に合わせて作成した、3年5組のクラス座席表です。
-          </p>
-          <button
-            type="button"
-            class="expand-trigger block w-full overflow-hidden rounded-2xl border border-emerald-900/10 bg-emerald-50/50 p-2"
-            data-expandable-image
-            data-image-src="./assets/img/seat-map.png"
-            data-image-alt="ななし学園3年5組のクラス座席表"
-            aria-label="座席表を拡大表示"
-          >
-            <img
-              src="./assets/img/seat-map.png"
-              alt="ななし学園3年5組のクラス座席表"
-              class="h-auto w-full rounded-xl"
-              loading="lazy"
-              decoding="async"
-            />
-          </button>
-          <p class="text-right text-xs font-bold tracking-wide text-emerald-700/80">クリックで拡大</p>
-        </div>
       </section>
 
       <section id="profile-book" class="school-card card-profile">
@@ -204,6 +147,63 @@
               />
             </figure>
           </div>
+        </div>
+      </section>
+
+      <section id="seat-map" class="school-card card-seat">
+        <div class="school-card-head px-5 py-3 sm:px-7 sm:py-4">
+          <h2 class="school-section-title text-2xl">クラスの座席表</h2>
+        </div>
+        <div class="space-y-4 p-4 sm:p-6">
+          <p class="text-sm font-bold tracking-wide text-emerald-800/90 sm:text-base">
+            学園企画の世界観に合わせて作成した、3年5組のクラス座席表です。
+          </p>
+          <button
+            type="button"
+            class="expand-trigger block w-full overflow-hidden rounded-2xl border border-emerald-900/10 bg-emerald-50/50 p-2"
+            data-expandable-image
+            data-image-src="./assets/img/seat-map.png"
+            data-image-alt="ななし学園3年5組のクラス座席表"
+            aria-label="座席表を拡大表示"
+          >
+            <img
+              src="./assets/img/seat-map.png"
+              alt="ななし学園3年5組のクラス座席表"
+              class="h-auto w-full rounded-xl"
+              loading="lazy"
+              decoding="async"
+            />
+          </button>
+          <p class="text-right text-xs font-bold tracking-wide text-emerald-700/80">クリックで拡大</p>
+        </div>
+      </section>
+
+      <section id="message-board" class="school-card card-board">
+        <div class="school-card-head px-5 py-3 sm:px-7 sm:py-4">
+          <h2 class="school-section-title text-2xl">寄せ書きの紹介</h2>
+        </div>
+        <div class="space-y-4 p-4 sm:p-6">
+          <p class="text-sm font-bold tracking-wide text-emerald-800/90 sm:text-base">
+            クラスのみんなから集まったメッセージを、1枚の寄せ書きにまとめました。
+            たくさんの「おめでとう」の気持ちをぜひ受け取ってください。
+          </p>
+          <button
+            type="button"
+            class="expand-trigger block w-full overflow-hidden rounded-2xl border border-emerald-900/10"
+            data-expandable-image
+            data-image-src="./assets/img/message-board.png"
+            data-image-alt="堰代ミコさんへの誕生日寄せ書き"
+            aria-label="寄せ書きを拡大表示"
+          >
+            <img
+              src="./assets/img/message-board.png"
+              alt="堰代ミコさんへの誕生日寄せ書き"
+              class="h-auto w-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </button>
+          <p class="text-right text-xs font-bold tracking-wide text-emerald-700/80">クリックで拡大</p>
         </div>
       </section>
 
