@@ -31,7 +31,7 @@ GitHub Pages は `main` ブランチの `docs/` 配下を配信します。
 ### 背景ステッカー演出
 - 元画像は `raw/images/sticker-XX.png` で管理
 - `npm run build:images` で `docs/assets/effects/stickers/sticker-XX.webp` を生成
-- 同時に `docs/assets/effects/sticker-layout.json` を生成し、背景の固定ランダム配置に利用
+- 背景配置は `index.html` 内JSで固定ピッチ描画（並び順のみ固定seedシャッフル）
 
 ## 開発手順
 1. 依存関係をインストール

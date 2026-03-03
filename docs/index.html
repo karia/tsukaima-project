@@ -263,7 +263,6 @@
       </footer>
     </div>
 
-    <script src="./assets/effects/sticker-layout.js"></script>
     <script>
       (() => {
         const body = document.body;
@@ -281,26 +280,86 @@
       (() => {
         const stickerLayer = document.getElementById("sticker-layer");
         if (!stickerLayer) return;
+        const seed = 20260305;
+        const stickerNames = Array.from({ length: 18 }, (_, index) => `sticker-${String(index + 1).padStart(2, "0")}`);
 
-        const buildSticker = (item) => {
+        const createSeededRng = (inputSeed) => {
+          let state = inputSeed >>> 0;
+          return () => {
+            state = (state * 1664525 + 1013904223) >>> 0;
+            return state / 4294967296;
+          };
+        };
+
+        const shuffleWithSeed = (items, inputSeed) => {
+          const rand = createSeededRng(inputSeed);
+          const array = [...items];
+          for (let i = array.length - 1; i > 0; i -= 1) {
+            const j = Math.floor(rand() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+          }
+          return array;
+        };
+
+        const getPageHeight = () => Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, window.innerHeight);
+
+        const buildSticker = (name, top, left) => {
           const sticker = document.createElement("img");
           sticker.className = "bg-sticker";
-          sticker.src = `./assets/effects/stickers/${item.name}.webp`;
+          sticker.src = `./assets/effects/stickers/${name}.webp`;
           sticker.alt = "";
           sticker.loading = "lazy";
           sticker.decoding = "async";
-          sticker.style.top = `${item.top}%`;
-          sticker.style.left = `${item.left}%`;
-          sticker.style.transform = `translate(-50%, -50%) rotate(${item.rotate}deg) scale(${item.scale})`;
-          sticker.style.opacity = String(item.opacity);
+          sticker.style.top = `${top}px`;
+          sticker.style.left = `${left}px`;
+          sticker.style.transform = "translate(-50%, -50%)";
+          sticker.style.opacity = "0.14";
           return sticker;
         };
 
-        const data = window.STICKER_LAYOUT;
-        if (!data || !Array.isArray(data.items)) return;
-        data.items.forEach((item) => {
-          stickerLayer.appendChild(buildSticker(item));
-        });
+        const renderStickers = () => {
+          const shuffled = shuffleWithSeed(stickerNames, seed);
+          const viewportWidth = window.innerWidth;
+          const pageHeight = getPageHeight();
+
+          const xStep = 220;
+          const yStep = 180;
+          const xOffsetEven = 80;
+          const xOffsetOdd = 190;
+          const yStart = 40;
+
+          const cols = Math.max(1, Math.floor((viewportWidth - xOffsetEven) / xStep) + 1);
+          const rows = Math.max(1, Math.ceil((pageHeight - yStart) / yStep) + 1);
+
+          const fragment = document.createDocumentFragment();
+          for (let row = 0; row < rows; row += 1) {
+            const rowOffset = row % 2 === 0 ? xOffsetEven : xOffsetOdd;
+            const top = yStart + row * yStep;
+            for (let col = 0; col < cols; col += 1) {
+              const left = rowOffset + col * xStep;
+              if (left > viewportWidth + 140) continue;
+              const index = row * cols + col;
+              const name = shuffled[index % shuffled.length];
+              fragment.appendChild(buildSticker(name, top, left));
+            }
+          }
+
+          stickerLayer.textContent = "";
+          stickerLayer.style.height = `${pageHeight}px`;
+          stickerLayer.appendChild(fragment);
+        };
+
+        let resizeTimer;
+        const scheduleRender = () => {
+          window.clearTimeout(resizeTimer);
+          resizeTimer = window.setTimeout(() => {
+            window.requestAnimationFrame(renderStickers);
+          }, 100);
+        };
+
+        renderStickers();
+        window.addEventListener("resize", scheduleRender);
+        window.addEventListener("load", scheduleRender);
       })();
 
       (() => {

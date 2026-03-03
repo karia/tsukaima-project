@@ -7,8 +7,6 @@ const rawDir = path.join(root, "raw/images");
 const webpDir = path.join(root, "docs/assets/img");
 const downloadsDir = path.join(root, "docs/assets/downloads");
 const stickersDir = path.join(root, "docs/assets/effects/stickers");
-const stickerLayoutPath = path.join(root, "docs/assets/effects/sticker-layout.json");
-const stickerLayoutJsPath = path.join(root, "docs/assets/effects/sticker-layout.js");
 
 const displayNames = ["key-visual", "message-board", "seat-map", "profile-mico", "profile-tsukaima"];
 const downloadNames = ["profile-mico", "profile-tsukaima"];
@@ -70,63 +68,6 @@ const buildStickerWebp = async (name) => {
   await sharp(inputPath).webp({ quality: 82 }).toFile(outputPath);
 };
 
-const createSeededRng = (seed) => {
-  let state = seed >>> 0;
-  return () => {
-    state = (state * 1664525 + 1013904223) >>> 0;
-    return state / 4294967296;
-  };
-};
-
-const shuffleWithSeed = (items, seed) => {
-  const rand = createSeededRng(seed);
-  const array = [...items];
-  for (let i = array.length - 1; i > 0; i -= 1) {
-    const j = Math.floor(rand() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-};
-
-const generateStickerLayout = (stickerNames, seed = 20260305) => {
-  const shuffled = shuffleWithSeed(stickerNames, seed);
-  const placements = shuffled.length * 10;
-  const topBase = 2;
-  const topRange = 96;
-  const topStep = 1.2;
-  const leftBase = 8;
-  const leftRange = 84;
-  const leftStep = 5;
-
-  return Array.from({ length: placements }, (_, index) => {
-    const row = Math.floor(index / 2);
-    const col = index % 2;
-    const name = shuffled[index % shuffled.length];
-    const top = topBase + ((row * topStep) % topRange);
-    const leftOffset = row * leftStep + (row % 2 === 0 ? 0 : 2.5) + (col === 0 ? 0 : 2.2);
-    const left = leftBase + (leftOffset % leftRange);
-    return {
-      name,
-      top: Number(top.toFixed(3)),
-      left: Number(left.toFixed(3)),
-      rotate: 0,
-      scale: 1,
-      opacity: 0.14,
-    };
-  });
-};
-
-const writeStickerLayout = async (layout) => {
-  const payload = {
-    seed: 20260305,
-    generatedAt: new Date().toISOString(),
-    items: layout,
-  };
-  await fs.writeFile(stickerLayoutPath, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
-  const jsPayload = `window.STICKER_LAYOUT = ${JSON.stringify(payload)};\n`;
-  await fs.writeFile(stickerLayoutJsPath, jsPayload, "utf8");
-};
-
 const main = async () => {
   await Promise.all([ensureDir(webpDir), ensureDir(downloadsDir), ensureDir(stickersDir)]);
 
@@ -143,8 +84,6 @@ const main = async () => {
   for (const name of stickerNames) {
     await buildStickerWebp(name);
   }
-  const layout = generateStickerLayout(stickerNames);
-  await writeStickerLayout(layout);
 
   console.log(
     "Built optimized images:",
