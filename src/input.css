@@ -197,7 +197,7 @@
   .school-note,
   .school-card,
   footer .school-card {
-    animation: school-fade-in 520ms ease both;
+    animation: school-fade-in 1000ms ease both;
   }
 
   .school-nav {
