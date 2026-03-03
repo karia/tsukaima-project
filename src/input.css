@@ -401,6 +401,7 @@
     inset: 0;
     margin: auto;
     max-height: 98vh;
+    max-height: 98dvh;
     max-width: 98vw;
     padding: 0.25rem;
     position: absolute;
@@ -412,6 +413,7 @@
     box-shadow: 0 20px 55px rgba(2, 6, 23, 0.5);
     height: 100%;
     max-height: calc(98vh - 0.5rem);
+    max-height: calc(98dvh - 0.5rem);
     object-fit: contain;
     width: 100%;
   }
