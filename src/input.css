@@ -201,6 +201,7 @@
   #profile-book,
   #seat-map,
   #message-board,
+  #present,
   #about-mico,
   #links {
     scroll-margin-top: 9.5rem;
@@ -464,6 +465,10 @@
     animation-delay: 150ms;
   }
 
+  #present {
+    animation-delay: 175ms;
+  }
+
   #seat-map {
     animation-delay: 200ms;
   }
@@ -537,6 +542,7 @@
     #profile-book,
     #seat-map,
     #message-board,
+    #present,
     #about-mico,
     #links {
       scroll-margin-top: 8.5rem;
