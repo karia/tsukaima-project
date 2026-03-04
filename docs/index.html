@@ -286,6 +286,7 @@
 
       (() => {
         const stickerLayer = document.getElementById("sticker-layer");
+        const pageShell = document.querySelector(".page-shell");
         if (!stickerLayer) return;
         const seed = 20260305;
         const stickerNames = [
@@ -326,7 +327,7 @@
           return array;
         };
 
-        const getPageHeight = () => Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, window.innerHeight);
+        const getContentHeight = () => Math.max(Math.ceil(pageShell?.getBoundingClientRect().height ?? 0), window.innerHeight);
 
         const buildSticker = (name, top, left) => {
           const sticker = document.createElement("img");
@@ -343,17 +344,27 @@
 
         const renderStickers = () => {
           const shuffled = shuffleWithSeed(stickerNames, seed);
-          const viewportWidth = window.innerWidth;
-          const pageHeight = getPageHeight();
+          const viewportWidth = Math.max(window.innerWidth, 320);
+          const contentHeight = getContentHeight();
+          const densityScale = Math.min(1.45, Math.max(1, 1280 / viewportWidth));
 
-          const xStep = 220;
-          const yStep = 180;
-          const xOffsetEven = 80;
-          const xOffsetOdd = 190;
-          const yStart = 40;
+          const baseXStep = 220;
+          const baseYStep = 180;
+          const baseXOffsetEven = 80;
+          const baseXOffsetOdd = 190;
+          const baseYStart = 40;
+          const baseRightBleed = 140;
 
-          const cols = Math.max(1, Math.floor((viewportWidth - xOffsetEven) / xStep) + 1);
-          const rows = Math.max(1, Math.ceil((pageHeight - yStart) / yStep) + 1);
+          const xStep = Math.max(120, Math.round(baseXStep / densityScale));
+          const yStep = Math.max(100, Math.round(baseYStep / densityScale));
+          const xOffsetEven = Math.round(baseXOffsetEven / densityScale);
+          const xOffsetOdd = Math.round(baseXOffsetOdd / densityScale);
+          const yStart = Math.max(20, Math.round(baseYStart / densityScale));
+          const rightBleed = Math.max(90, Math.round(baseRightBleed / densityScale));
+
+          const minOffset = Math.min(xOffsetEven, xOffsetOdd);
+          const cols = Math.max(1, Math.floor((viewportWidth - minOffset) / xStep) + 1);
+          const rows = Math.max(1, Math.ceil((contentHeight - yStart) / yStep) + 1);
 
           const fragment = document.createDocumentFragment();
           for (let row = 0; row < rows; row += 1) {
@@ -361,7 +372,7 @@
             const top = yStart + row * yStep;
             for (let col = 0; col < cols; col += 1) {
               const left = rowOffset + col * xStep;
-              if (left > viewportWidth + 140) continue;
+              if (left > viewportWidth + rightBleed) continue;
               const index = row * cols + col;
               const name = shuffled[index % shuffled.length];
               fragment.appendChild(buildSticker(name, top, left));
@@ -369,7 +380,7 @@
           }
 
           stickerLayer.textContent = "";
-          stickerLayer.style.height = `${pageHeight}px`;
+          stickerLayer.style.height = `${contentHeight}px`;
           stickerLayer.appendChild(fragment);
         };
 
