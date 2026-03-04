@@ -201,6 +201,7 @@
   #profile-book,
   #seat-map,
   #message-board,
+  #about-mico,
   #links {
     scroll-margin-top: 9.5rem;
   }
@@ -471,6 +472,10 @@
     animation-delay: 250ms;
   }
 
+  #about-mico {
+    animation-delay: 275ms;
+  }
+
   #links {
     animation-delay: 300ms;
   }
@@ -516,6 +521,7 @@
     #profile-book,
     #seat-map,
     #message-board,
+    #about-mico,
     #links {
       scroll-margin-top: 8.5rem;
     }
