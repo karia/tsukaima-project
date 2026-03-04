@@ -201,6 +201,7 @@
   #profile-book,
   #seat-map,
   #message-board,
+  #about-mico,
   #links {
     scroll-margin-top: 9.5rem;
   }
@@ -471,6 +472,10 @@
     animation-delay: 250ms;
   }
 
+  #about-mico {
+    animation-delay: 275ms;
+  }
+
   #links {
     animation-delay: 300ms;
   }
@@ -503,6 +508,22 @@
       top: 0.5rem;
     }
 
+    .school-nav-link {
+      font-size: clamp(0.7rem, 2.2vw, 0.8rem);
+      min-height: 2.35rem;
+      padding-inline: clamp(0.16rem, 0.8vw, 0.28rem);
+    }
+
+    .with-sticker-nav {
+      gap: 0.08rem;
+    }
+
+    .with-sticker-nav::before,
+    .with-sticker-nav::after {
+      height: 1.05em;
+      width: 1.05em;
+    }
+
     .with-sticker-subtitle::before,
     .with-sticker-subtitle::after {
       height: 2em;
@@ -516,6 +537,7 @@
     #profile-book,
     #seat-map,
     #message-board,
+    #about-mico,
     #links {
       scroll-margin-top: 8.5rem;
     }
