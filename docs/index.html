@@ -347,6 +347,9 @@
           const viewportWidth = Math.max(window.innerWidth, 320);
           const contentHeight = getContentHeight();
           const densityScale = Math.min(1.45, Math.max(1, 1280 / viewportWidth));
+          const mobileTightness = Math.min(1, Math.max(0, (430 - viewportWidth) / 110));
+          const horizontalBoost = 1 + mobileTightness;
+          const verticalBoost = 1 + mobileTightness * 2;
 
           const baseXStep = 220;
           const baseYStep = 180;
@@ -355,12 +358,15 @@
           const baseYStart = 40;
           const baseRightBleed = 140;
 
-          const xStep = Math.max(120, Math.round(baseXStep / densityScale));
-          const yStep = Math.max(100, Math.round(baseYStep / densityScale));
-          const xOffsetEven = Math.round(baseXOffsetEven / densityScale);
-          const xOffsetOdd = Math.round(baseXOffsetOdd / densityScale);
-          const yStart = Math.max(20, Math.round(baseYStart / densityScale));
-          const rightBleed = Math.max(90, Math.round(baseRightBleed / densityScale));
+          const xScale = densityScale * horizontalBoost;
+          const yScale = densityScale * verticalBoost;
+
+          const xStep = Math.max(70, Math.round(baseXStep / xScale));
+          const yStep = Math.max(42, Math.round(baseYStep / yScale));
+          const xOffsetEven = Math.round(baseXOffsetEven / xScale);
+          const xOffsetOdd = Math.round(baseXOffsetOdd / xScale);
+          const yStart = Math.max(10, Math.round(baseYStart / yScale));
+          const rightBleed = Math.max(70, Math.round(baseRightBleed / xScale));
 
           const minOffset = Math.min(xOffsetEven, xOffsetOdd);
           const cols = Math.max(1, Math.floor((viewportWidth - minOffset) / xStep) + 1);
